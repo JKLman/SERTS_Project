@@ -1,0 +1,200 @@
+\hypertarget{stm32f4__discovery__audio_8h}{}\section{src/stm32f4\+\_\+discovery\+\_\+audio.h File Reference}
+\label{stm32f4__discovery__audio_8h}\index{src/stm32f4\+\_\+discovery\+\_\+audio.\+h@{src/stm32f4\+\_\+discovery\+\_\+audio.\+h}}
+
+
+This file contains the common defines and functions prototypes for \mbox{\hyperlink{stm32f4__discovery__audio_8c}{stm32f4\+\_\+discovery\+\_\+audio.\+c}} driver.  
+
+
+{\ttfamily \#include \char`\"{}cs43l22.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+discovery.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdm\+\_\+filter.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I2\+S3}~S\+P\+I3
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+S\+P\+I3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+S\+C\+K\+\_\+\+S\+D\+\_\+\+W\+S\+\_\+\+AF}~G\+P\+I\+O\+\_\+\+A\+F6\+\_\+\+S\+P\+I3
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+S\+C\+K\+\_\+\+S\+D\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+G\+P\+I\+O\+C\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+M\+C\+K\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+G\+P\+I\+O\+C\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+W\+S\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+G\+P\+I\+O\+A\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+W\+S\+\_\+\+P\+IN}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+4
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+S\+C\+K\+\_\+\+P\+IN}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+10
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+S\+D\+\_\+\+P\+IN}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+12
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+M\+C\+K\+\_\+\+P\+IN}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+7
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+S\+C\+K\+\_\+\+S\+D\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT}~G\+P\+I\+OC
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+W\+S\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT}~G\+P\+I\+OA
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+M\+C\+K\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT}~G\+P\+I\+OC
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+D\+M\+Ax\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+D\+M\+A1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+D\+M\+Ax\+\_\+\+S\+T\+R\+E\+AM}~D\+M\+A1\+\_\+\+Stream7
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+D\+M\+Ax\+\_\+\+C\+H\+A\+N\+N\+EL}~D\+M\+A\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+D\+M\+Ax\+\_\+\+I\+RQ}~D\+M\+A1\+\_\+\+Stream7\+\_\+\+I\+R\+Qn
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+D\+M\+Ax\+\_\+\+P\+E\+R\+I\+P\+H\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}~D\+M\+A\+\_\+\+P\+D\+A\+T\+A\+A\+L\+I\+G\+N\+\_\+\+H\+A\+L\+F\+W\+O\+RD
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+D\+M\+Ax\+\_\+\+M\+E\+M\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}~D\+M\+A\+\_\+\+M\+D\+A\+T\+A\+A\+L\+I\+G\+N\+\_\+\+H\+A\+L\+F\+W\+O\+RD
+\item 
+\#define {\bfseries D\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+ZE}~0x\+F\+F\+FF
+\item 
+\#define {\bfseries I2\+S3\+\_\+\+I\+R\+Q\+Handler}~D\+M\+A1\+\_\+\+Stream7\+\_\+\+I\+R\+Q\+Handler
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+I\+R\+Q\+\_\+\+P\+R\+E\+P\+R\+IO}~5   /$\ast$ Select the preemption priority level(0 is the highest) $\ast$/
+\item 
+\#define {\bfseries I2\+S2}~S\+P\+I2
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+S\+P\+I2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+S\+C\+K\+\_\+\+P\+IN}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+10
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+S\+C\+K\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT}~G\+P\+I\+OB
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+S\+C\+K\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+G\+P\+I\+O\+B\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+S\+C\+K\+\_\+\+AF}~G\+P\+I\+O\+\_\+\+A\+F5\+\_\+\+S\+P\+I2
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+M\+O\+S\+I\+\_\+\+P\+IN}~G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+3
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+M\+O\+S\+I\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+RT}~G\+P\+I\+OC
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+M\+O\+S\+I\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+G\+P\+I\+O\+C\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+M\+O\+S\+I\+\_\+\+AF}~G\+P\+I\+O\+\_\+\+A\+F5\+\_\+\+S\+P\+I2
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+D\+M\+Ax\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~\+\_\+\+\_\+\+D\+M\+A1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE()
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+D\+M\+Ax\+\_\+\+S\+T\+R\+E\+AM}~D\+M\+A1\+\_\+\+Stream3
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+D\+M\+Ax\+\_\+\+C\+H\+A\+N\+N\+EL}~D\+M\+A\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+0
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+D\+M\+Ax\+\_\+\+I\+RQ}~D\+M\+A1\+\_\+\+Stream3\+\_\+\+I\+R\+Qn
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+D\+M\+Ax\+\_\+\+P\+E\+R\+I\+P\+H\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}~D\+M\+A\+\_\+\+P\+D\+A\+T\+A\+A\+L\+I\+G\+N\+\_\+\+H\+A\+L\+F\+W\+O\+RD
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+D\+M\+Ax\+\_\+\+M\+E\+M\+\_\+\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}~D\+M\+A\+\_\+\+M\+D\+A\+T\+A\+A\+L\+I\+G\+N\+\_\+\+H\+A\+L\+F\+W\+O\+RD
+\item 
+\#define {\bfseries I2\+S2\+\_\+\+I\+R\+Q\+Handler}~D\+M\+A1\+\_\+\+Stream3\+\_\+\+I\+R\+Q\+Handler
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+I\+R\+Q\+\_\+\+P\+R\+E\+P\+R\+IO}~6   /$\ast$ Select the preemption priority level(0 is the highest) $\ast$/
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+D\+A\+T\+A\+\_\+\+S\+I\+ZE}~2   /$\ast$ 16-\/bits audio data size $\ast$/
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+OK}~0
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+E\+R\+R\+OR}~1
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+T\+I\+M\+E\+O\+UT}~2
+\item 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+F\+R\+EQ}~I2\+S\+\_\+\+A\+U\+D\+I\+O\+F\+R\+E\+Q\+\_\+16K
+\item 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+B\+I\+T\+\_\+\+R\+E\+S\+O\+L\+U\+T\+I\+ON}~16
+\item 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+BR}~1 /$\ast$ Mono = 1, Stereo = 2 $\ast$/
+\item 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+V\+O\+L\+U\+ME}~64
+\item 
+\#define {\bfseries I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE}~128$\ast$D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+F\+R\+EQ/16000$\ast$D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+BR
+\item 
+\#define {\bfseries P\+C\+M\+\_\+\+O\+U\+T\+\_\+\+S\+I\+ZE}~D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+F\+R\+EQ/1000
+\item 
+\#define {\bfseries C\+H\+A\+N\+N\+E\+L\+\_\+\+D\+E\+M\+U\+X\+\_\+\+M\+A\+SK}~0x55
+\item 
+\#define {\bfseries D\+M\+A\+\_\+\+M\+AX}(\+\_\+\+X\+\_\+)~(((\+\_\+\+X\+\_\+) $<$= D\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+ZE)? (\+\_\+\+X\+\_\+)\+:D\+M\+A\+\_\+\+M\+A\+X\+\_\+\+S\+ZE)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gae713c698a93ff492424c6a8363f53bcc}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Init}} (uint16\+\_\+t Output\+Device, uint8\+\_\+t Volume, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Configures the audio peripherals. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gaa415fdd481a01468fdfcd9d91f0f6711}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Play}} (uint16\+\_\+t $\ast$p\+Buffer, uint32\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Starts playing audio stream from a data buffer for a determined size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gacbc557827ebf62fdd9a0ceb21fd89b2b}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Change\+Buffer}} (uint16\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Sends n-\/\+Bytes on the I2S interface. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_ga73a0f92b8adbfb2e8207067434c2bfef}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Pause}} (void)
+\begin{DoxyCompactList}\small\item\em Pauses the audio file stream. In case of using D\+MA, the D\+MA Pause feature is used. W\+A\+R\+N\+I\+NG\+: When calling \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga73a0f92b8adbfb2e8207067434c2bfef}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Pause()}} function for pause, only the \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga064f0eddd4ab25a33fd1fe83af429c9f}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Resume()}} function should be called for resume (use of \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaa415fdd481a01468fdfcd9d91f0f6711}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Play()}} function for resume could lead to unexpected behavior). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_ga064f0eddd4ab25a33fd1fe83af429c9f}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Resume}} (void)
+\begin{DoxyCompactList}\small\item\em Resumes the audio file streaming. ~\newline
+W\+A\+R\+N\+I\+NG\+: When calling \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga73a0f92b8adbfb2e8207067434c2bfef}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Pause()}} function for pause, only \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga064f0eddd4ab25a33fd1fe83af429c9f}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Resume()}} function should be called for resume (use of \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaa415fdd481a01468fdfcd9d91f0f6711}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Play()}} function for resume could lead to unexpected behavior). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gad1a2df4f21ae348be27cecff63dfca1c}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Stop}} (uint32\+\_\+t Option)
+\begin{DoxyCompactList}\small\item\em Stops audio playing and Power down the Audio Codec. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_ga2929e2c81c7ca31f8f52622a06ab4900}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Volume}} (uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Controls the current audio volume level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gaf9159656c0f4dde08c62334a25d4b106}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Frequency}} (uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Update the audio frequency. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_ga6f0fdfb8396ba31eaebb8ff530de3dd3}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Mute}} (uint32\+\_\+t Cmd)
+\begin{DoxyCompactList}\small\item\em Enables or disables the M\+U\+TE mode by software. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gacd0d9e6eb0ff2569cf6c4b92fc359484}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Output\+Mode}} (uint8\+\_\+t Output)
+\begin{DoxyCompactList}\small\item\em Switch dynamically (while audio file is played) the output target (speaker or headphone). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gaf7880d05162512445bf68d4fa9d303e2}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Transfer\+Complete\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA full Transfer complete event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_ga729c33c16c93296de9eb18a8a9f741c7}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Half\+Transfer\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA Half Transfer complete event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___exported___functions_gaddc5d178904e5850e8365a34abd168b5}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Error\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA F\+I\+FO error event. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_ga5a40f0d40f80fd71fd16fbb4e7fb3b7d}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq, uint32\+\_\+t Bit\+Res, uint32\+\_\+t Chnl\+Nbr)
+\begin{DoxyCompactList}\small\item\em Initializes wave recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_gaae6c101b1450ec26a15249494764e0ae}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record}} (uint16\+\_\+t $\ast$p\+Data, uint32\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Starts audio recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_ga71122b966773b01c8a5933c76f3f12fe}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em Stops audio recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_gac1df7a4be23f378f89e25685a2266247}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause}} (void)
+\begin{DoxyCompactList}\small\item\em Pauses the audio file stream. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_gadf7a4308129a18f4a3c22adb6f543d01}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume}} (void)
+\begin{DoxyCompactList}\small\item\em Resumes the audio file stream. ~\newline
+ \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_gab17acd5b523e9af8ac67271b0b6123ba}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume}} (uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Controls the audio in volume level. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_ga778fc1e32ffc40c6d779e637a80a7dac}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM}} (uint16\+\_\+t $\ast$P\+D\+M\+Buf, uint16\+\_\+t $\ast$P\+C\+M\+Buf)
+\begin{DoxyCompactList}\small\item\em Converts audio format from P\+DM to P\+CM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_gaa5cfd402108d9933f0a12beed3863587}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Transfer\+Complete\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em User callback when record buffer is filled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_ga90d938ee6930b09a9931738e186bcb4e}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Half\+Transfer\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA Half Transfer complete event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___exported___functions_ga8a997e14f50669df1d168baebfe3d83c}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Error\+\_\+\+Callback}} (void)
+\begin{DoxyCompactList}\small\item\em Audio IN Error callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t {\bfseries Audio\+In\+Volume}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the common defines and functions prototypes for \mbox{\hyperlink{stm32f4__discovery__audio_8c}{stm32f4\+\_\+discovery\+\_\+audio.\+c}} driver. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V2.\+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12-\/\+January-\/2016 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2016 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 

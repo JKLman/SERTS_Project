@@ -1,0 +1,74 @@
+\hypertarget{cs43l22_8c}{}\section{src/cs43l22.c File Reference}
+\label{cs43l22_8c}\index{src/cs43l22.\+c@{src/cs43l22.\+c}}
+
+
+This file provides the C\+S43\+L22 Audio Codec driver.  
+
+
+{\ttfamily \#include \char`\"{}cs43l22.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries V\+O\+L\+U\+M\+E\+\_\+\+C\+O\+N\+V\+E\+RT}(Volume)~(((Volume) $>$ 100)? 100\+:((uint8\+\_\+t)(((Volume) $\ast$ 255) / 100)))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga47b373a281c7ba0ea0fac752f3d0a903}{cs43l22\+\_\+\+Init}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t Output\+Device, uint8\+\_\+t Volume, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the audio codec and the control interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_s43_l22___private___functions_gaeba1251bafcbeacb591dfe8cb8175447}{cs43l22\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_gad4e4e8b889500f0e64c546a31d4b6dca}{cs43l22\+\_\+\+Read\+ID}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Get the C\+S43\+L22 ID. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga1a210c3782b3d56db00565d4699f4c89}{cs43l22\+\_\+\+Play}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t $\ast$p\+Buffer, uint16\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Start the audio Codec play feature. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_gafc49ea6a76539430cd303849b60ae38d}{cs43l22\+\_\+\+Pause}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Pauses playing on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga579c0ef6455060e9117632f8d83d606a}{cs43l22\+\_\+\+Resume}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Resumes playing on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_gabddd9aca1e7c5cdf636556cc02b4d82e}{cs43l22\+\_\+\+Stop}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Codec\+Pdwn\+Mode)
+\begin{DoxyCompactList}\small\item\em Stops audio Codec playing. It powers down the codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga9cd060bb226e44065ec50c7803041114}{cs43l22\+\_\+\+Set\+Volume}} (uint16\+\_\+t Device\+Addr, uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Sets higher or lower the codec volume level. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga1ea4920e35f5e5f903870a50b53bc719}{cs43l22\+\_\+\+Set\+Frequency}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Sets new frequency. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_gaed17c2b64d79830afa43b5a45b159286}{cs43l22\+\_\+\+Set\+Mute}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Cmd)
+\begin{DoxyCompactList}\small\item\em Enables or disables the mute feature on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_gaad55b2ed28b599b34f4bfe50df745f0d}{cs43l22\+\_\+\+Set\+Output\+Mode}} (uint16\+\_\+t Device\+Addr, uint8\+\_\+t Output)
+\begin{DoxyCompactList}\small\item\em Switch dynamically (while audio file is played) the output target (speaker or headphone). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga647488feb466972a5557a2fe2e9350e7}{cs43l22\+\_\+\+Reset}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Resets cs43l22 registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_u_d_i_o___drv_type_def}{A\+U\+D\+I\+O\+\_\+\+Drv\+Type\+Def}} {\bfseries cs43l22\+\_\+drv}
+\item 
+volatile uint8\+\_\+t {\bfseries Output\+Dev} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file provides the C\+S43\+L22 Audio Codec driver. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V2.\+0.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06-\/\+October-\/2015 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2015 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 

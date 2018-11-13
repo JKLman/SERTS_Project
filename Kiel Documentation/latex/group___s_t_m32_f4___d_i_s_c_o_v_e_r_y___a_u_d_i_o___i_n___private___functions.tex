@@ -1,0 +1,204 @@
+\hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions}{}\section{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+RY A\+U\+D\+IO IN Private Functions}
+\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions}\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga5a40f0d40f80fd71fd16fbb4e7fb3b7d}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq, uint32\+\_\+t Bit\+Res, uint32\+\_\+t Chnl\+Nbr)
+\begin{DoxyCompactList}\small\item\em Initializes wave recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gad09c12263c075c5e26b28e4380468c9e}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record}} (uint16\+\_\+t $\ast$pbuf, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Starts audio recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga71122b966773b01c8a5933c76f3f12fe}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em Stops audio recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gac1df7a4be23f378f89e25685a2266247}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause}} (void)
+\begin{DoxyCompactList}\small\item\em Pauses the audio file stream. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gadf7a4308129a18f4a3c22adb6f543d01}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume}} (void)
+\begin{DoxyCompactList}\small\item\em Resumes the audio file stream. ~\newline
+ \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gab17acd5b523e9af8ac67271b0b6123ba}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume}} (uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Controls the audio in volume level. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga778fc1e32ffc40c6d779e637a80a7dac}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM}} (uint16\+\_\+t $\ast$P\+D\+M\+Buf, uint16\+\_\+t $\ast$P\+C\+M\+Buf)
+\begin{DoxyCompactList}\small\item\em Converts audio format from P\+DM to P\+CM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga18c33b2d429b06674ec30e5b2b81862c}{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback}} (I2\+S\+\_\+\+Handle\+Type\+Def $\ast$hi2s)
+\begin{DoxyCompactList}\small\item\em Rx Transfer completed callbacks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga6c4cd3b18c42c6de0c3f4fe7068a5b12}{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback}} (I2\+S\+\_\+\+Handle\+Type\+Def $\ast$hi2s)
+\begin{DoxyCompactList}\small\item\em Rx Half Transfer completed callbacks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga345932dd9f27ba5e7fbf54fe6e9a18d3}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga345932dd9f27ba5e7fbf54fe6e9a18d3}} 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga345932dd9f27ba5e7fbf54fe6e9a18d3}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Transfer\+Complete\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em User callback when record buffer is filled. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga58049b7f6b2a1f47c114788a932ca1f7}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga58049b7f6b2a1f47c114788a932ca1f7}} 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga58049b7f6b2a1f47c114788a932ca1f7}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Half\+Transfer\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA Half Transfer complete event. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gaffd34f15e16f10cbe6e4f6fd35cd0ea1}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gaffd34f15e16f10cbe6e4f6fd35cd0ea1}} 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gaffd34f15e16f10cbe6e4f6fd35cd0ea1}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Error\+\_\+\+Callback}} (void)
+\begin{DoxyCompactList}\small\item\em Audio IN Error callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga5a40f0d40f80fd71fd16fbb4e7fb3b7d}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga5a40f0d40f80fd71fd16fbb4e7fb3b7d}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init}}
+\index{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init()}{BSP\_AUDIO\_IN\_Init()}}
+{\footnotesize\ttfamily uint8\+\_\+t B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Audio\+Freq,  }\item[{uint32\+\_\+t}]{Bit\+Res,  }\item[{uint32\+\_\+t}]{Chnl\+Nbr }\end{DoxyParamCaption})}
+
+
+
+Initializes wave recording. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Audio\+Freq} & Audio frequency to be configured for the I2S peripheral. \\
+\hline
+{\em Bit\+Res} & Audio frequency to be configured for the I2S peripheral. \\
+\hline
+{\em Chnl\+Nbr} & Audio frequency to be configured for the I2S peripheral. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em A\+U\+D\+I\+O\+\_\+\+OK} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gac1df7a4be23f378f89e25685a2266247}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gac1df7a4be23f378f89e25685a2266247}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause}}
+\index{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause()}{BSP\_AUDIO\_IN\_Pause()}}
+{\footnotesize\ttfamily uint8\+\_\+t B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Pauses the audio file stream. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em A\+U\+D\+I\+O\+\_\+\+OK} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga778fc1e32ffc40c6d779e637a80a7dac}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga778fc1e32ffc40c6d779e637a80a7dac}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM}}
+\index{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+C\+M()}{BSP\_AUDIO\_IN\_PDMToPCM()}}
+{\footnotesize\ttfamily uint8\+\_\+t B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{P\+D\+M\+Buf,  }\item[{uint16\+\_\+t $\ast$}]{P\+C\+M\+Buf }\end{DoxyParamCaption})}
+
+
+
+Converts audio format from P\+DM to P\+CM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em P\+D\+M\+Buf} & Pointer to data P\+DM buffer \\
+\hline
+{\em P\+C\+M\+Buf} & Pointer to data P\+CM buffer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em A\+U\+D\+I\+O\+\_\+\+OK} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gad09c12263c075c5e26b28e4380468c9e}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gad09c12263c075c5e26b28e4380468c9e}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record}}
+\index{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record()}{BSP\_AUDIO\_IN\_Record()}}
+{\footnotesize\ttfamily uint8\+\_\+t B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{pbuf,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Starts audio recording. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pbuf} & Main buffer pointer for the recorded data storing ~\newline
+\\
+\hline
+{\em size} & Current size of the recorded buffer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em A\+U\+D\+I\+O\+\_\+\+OK} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gadf7a4308129a18f4a3c22adb6f543d01}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gadf7a4308129a18f4a3c22adb6f543d01}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume}}
+\index{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume()}{BSP\_AUDIO\_IN\_Resume()}}
+{\footnotesize\ttfamily uint8\+\_\+t B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resumes the audio file stream. ~\newline
+ 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em A\+U\+D\+I\+O\+\_\+\+OK} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gab17acd5b523e9af8ac67271b0b6123ba}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gab17acd5b523e9af8ac67271b0b6123ba}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume}}
+\index{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume()}{BSP\_AUDIO\_IN\_SetVolume()}}
+{\footnotesize\ttfamily uint8\+\_\+t B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Volume }\end{DoxyParamCaption})}
+
+
+
+Controls the audio in volume level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Volume} & Volume level to be set in percentage from 0\% to 100\% (0 for Mute and 100 for Max volume level). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em A\+U\+D\+I\+O\+\_\+\+OK} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga71122b966773b01c8a5933c76f3f12fe}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga71122b966773b01c8a5933c76f3f12fe}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop}}
+\index{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop@{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop()}{BSP\_AUDIO\_IN\_Stop()}}
+{\footnotesize\ttfamily uint8\+\_\+t B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stops audio recording. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em A\+U\+D\+I\+O\+\_\+\+OK} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga18c33b2d429b06674ec30e5b2b81862c}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga18c33b2d429b06674ec30e5b2b81862c}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback@{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback}}
+\index{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback@{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback()}{HAL\_I2S\_RxCpltCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{I2\+S\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2s }\end{DoxyParamCaption})}
+
+
+
+Rx Transfer completed callbacks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hi2s} & I2S handle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga6c4cd3b18c42c6de0c3f4fe7068a5b12}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga6c4cd3b18c42c6de0c3f4fe7068a5b12}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback@{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback}}
+\index{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback@{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback()}{HAL\_I2S\_RxHalfCpltCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{I2\+S\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2s }\end{DoxyParamCaption})}
+
+
+
+Rx Half Transfer completed callbacks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hi2s} & I2S handle \\
+\hline
+\end{DoxyParams}

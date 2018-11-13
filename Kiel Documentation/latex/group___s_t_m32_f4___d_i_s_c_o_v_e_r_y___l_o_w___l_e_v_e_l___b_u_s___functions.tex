@@ -1,0 +1,98 @@
+\hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions}{}\section{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+RY L\+OW L\+E\+V\+EL B\+US Functions}
+\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions}\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_gaeedea8061d4abde8cd304b454334ae42}{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Write}} (uint8\+\_\+t $\ast$p\+Buffer, uint8\+\_\+t Write\+Addr, uint16\+\_\+t Num\+Byte\+To\+Write)
+\begin{DoxyCompactList}\small\item\em Writes one byte to the Accelerometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_ga78371d00a01f2a0cdd613306e4c4e58f}{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Read}} (uint8\+\_\+t $\ast$p\+Buffer, uint8\+\_\+t Read\+Addr, uint16\+\_\+t Num\+Byte\+To\+Read)
+\begin{DoxyCompactList}\small\item\em Reads a block of data from the Accelerometer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_ga269d6aa92989351e75f6d58378e3b9ba}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg, uint8\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Writes a single data. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_gaf8740cdd8dfc7929d23d52d6fcf0901f}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg)
+\begin{DoxyCompactList}\small\item\em Reads a single data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_ga78371d00a01f2a0cdd613306e4c4e58f}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_ga78371d00a01f2a0cdd613306e4c4e58f}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}!A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Read@{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Read}}
+\index{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Read@{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Read}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}}
+\subsubsection{\texorpdfstring{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Read()}{ACCELERO\_IO\_Read()}}
+{\footnotesize\ttfamily void A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+Buffer,  }\item[{uint8\+\_\+t}]{Read\+Addr,  }\item[{uint16\+\_\+t}]{Num\+Byte\+To\+Read }\end{DoxyParamCaption})}
+
+
+
+Reads a block of data from the Accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & pointer to the buffer that receives the data read from the Accelerometer. \\
+\hline
+{\em Read\+Addr} & Accelerometer\textquotesingle{}s internal address to read from. \\
+\hline
+{\em Num\+Byte\+To\+Read} & number of bytes to read from the Accelerometer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_gaeedea8061d4abde8cd304b454334ae42}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_gaeedea8061d4abde8cd304b454334ae42}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}!A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Write@{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Write}}
+\index{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Write@{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Write}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}}
+\subsubsection{\texorpdfstring{A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Write()}{ACCELERO\_IO\_Write()}}
+{\footnotesize\ttfamily void A\+C\+C\+E\+L\+E\+R\+O\+\_\+\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{p\+Buffer,  }\item[{uint8\+\_\+t}]{Write\+Addr,  }\item[{uint16\+\_\+t}]{Num\+Byte\+To\+Write }\end{DoxyParamCaption})}
+
+
+
+Writes one byte to the Accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & pointer to the buffer containing the data to be written to the Accelerometer. \\
+\hline
+{\em Write\+Addr} & Accelerometer\textquotesingle{}s internal address to write to. \\
+\hline
+{\em Num\+Byte\+To\+Write} & Number of bytes to write. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_gaf8740cdd8dfc7929d23d52d6fcf0901f}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_gaf8740cdd8dfc7929d23d52d6fcf0901f}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}!A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read@{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read}}
+\index{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read@{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}}
+\subsubsection{\texorpdfstring{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read()}{AUDIO\_IO\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Addr,  }\item[{uint8\+\_\+t}]{Reg }\end{DoxyParamCaption})}
+
+
+
+Reads a single data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addr} & I2C address \\
+\hline
+{\em Reg} & Reg address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Data} & to be read \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_ga269d6aa92989351e75f6d58378e3b9ba}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_ga269d6aa92989351e75f6d58378e3b9ba}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}!A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write@{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write}}
+\index{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write@{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y L\+O\+W L\+E\+V\+E\+L B\+U\+S Functions}}
+\subsubsection{\texorpdfstring{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write()}{AUDIO\_IO\_Write()}}
+{\footnotesize\ttfamily void A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Addr,  }\item[{uint8\+\_\+t}]{Reg,  }\item[{uint8\+\_\+t}]{Value }\end{DoxyParamCaption})}
+
+
+
+Writes a single data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addr} & I2C address \\
+\hline
+{\em Reg} & Reg address \\
+\hline
+{\em Value} & Data to be written \\
+\hline
+\end{DoxyParams}

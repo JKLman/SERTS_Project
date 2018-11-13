@@ -1,0 +1,316 @@
+\hypertarget{group___c_s43_l22___exported___functions}{}\section{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}
+\label{group___c_s43_l22___exported___functions}\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga47b373a281c7ba0ea0fac752f3d0a903}{cs43l22\+\_\+\+Init}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t Output\+Device, uint8\+\_\+t Volume, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the audio codec and the control interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_s43_l22___exported___functions_gaeba1251bafcbeacb591dfe8cb8175447}{cs43l22\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gad4e4e8b889500f0e64c546a31d4b6dca}{cs43l22\+\_\+\+Read\+ID}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Get the C\+S43\+L22 ID. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga1a210c3782b3d56db00565d4699f4c89}{cs43l22\+\_\+\+Play}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t $\ast$p\+Buffer, uint16\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Start the audio Codec play feature. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gafc49ea6a76539430cd303849b60ae38d}{cs43l22\+\_\+\+Pause}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Pauses playing on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga579c0ef6455060e9117632f8d83d606a}{cs43l22\+\_\+\+Resume}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Resumes playing on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga8e551ac489dbd2b701f0ac6ed54c143b}{cs43l22\+\_\+\+Stop}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Cmd)
+\begin{DoxyCompactList}\small\item\em Stops audio Codec playing. It powers down the codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga9cd060bb226e44065ec50c7803041114}{cs43l22\+\_\+\+Set\+Volume}} (uint16\+\_\+t Device\+Addr, uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Sets higher or lower the codec volume level. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga1ea4920e35f5e5f903870a50b53bc719}{cs43l22\+\_\+\+Set\+Frequency}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Sets new frequency. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gaed17c2b64d79830afa43b5a45b159286}{cs43l22\+\_\+\+Set\+Mute}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Cmd)
+\begin{DoxyCompactList}\small\item\em Enables or disables the mute feature on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gaad55b2ed28b599b34f4bfe50df745f0d}{cs43l22\+\_\+\+Set\+Output\+Mode}} (uint16\+\_\+t Device\+Addr, uint8\+\_\+t Output)
+\begin{DoxyCompactList}\small\item\em Switch dynamically (while audio file is played) the output target (speaker or headphone). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga647488feb466972a5557a2fe2e9350e7}{cs43l22\+\_\+\+Reset}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Resets cs43l22 registers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_gace44c34a627a0fb28c61366b9ca80b78}\label{group___c_s43_l22___exported___functions_gace44c34a627a0fb28c61366b9ca80b78}} 
+void \mbox{\hyperlink{group___c_s43_l22___exported___functions_gace44c34a627a0fb28c61366b9ca80b78}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes Audio low level. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga06ed3f7f32df17d8b5099754dd81d6b3}\label{group___c_s43_l22___exported___functions_ga06ed3f7f32df17d8b5099754dd81d6b3}} 
+void \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga06ed3f7f32df17d8b5099754dd81d6b3}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De\+Initializes Audio low level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_gaeefb43f26352ff4df610fd8bca1b279d}\label{group___c_s43_l22___exported___functions_gaeefb43f26352ff4df610fd8bca1b279d}} 
+\mbox{\hyperlink{struct_a_u_d_i_o___drv_type_def}{A\+U\+D\+I\+O\+\_\+\+Drv\+Type\+Def}} {\bfseries cs43l22\+\_\+drv}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_gaeba1251bafcbeacb591dfe8cb8175447}\label{group___c_s43_l22___exported___functions_gaeba1251bafcbeacb591dfe8cb8175447}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+De\+Init@{cs43l22\+\_\+\+De\+Init}}
+\index{cs43l22\+\_\+\+De\+Init@{cs43l22\+\_\+\+De\+Init}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+De\+Init()}{cs43l22\_DeInit()}}
+{\footnotesize\ttfamily void cs43l22\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Deinitializes the audio codec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga47b373a281c7ba0ea0fac752f3d0a903}\label{group___c_s43_l22___exported___functions_ga47b373a281c7ba0ea0fac752f3d0a903}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Init@{cs43l22\+\_\+\+Init}}
+\index{cs43l22\+\_\+\+Init@{cs43l22\+\_\+\+Init}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Init()}{cs43l22\_Init()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint16\+\_\+t}]{Output\+Device,  }\item[{uint8\+\_\+t}]{Volume,  }\item[{uint32\+\_\+t}]{Audio\+Freq }\end{DoxyParamCaption})}
+
+
+
+Initializes the audio codec and the control interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. ~\newline
+\\
+\hline
+{\em Output\+Device} & can be O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+P\+E\+A\+K\+ER, O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+H\+E\+A\+D\+P\+H\+O\+NE, O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+B\+O\+TH or O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+A\+U\+TO . \\
+\hline
+{\em Volume} & Initial volume level (from 0 (Mute) to 100 (Max)) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_gafc49ea6a76539430cd303849b60ae38d}\label{group___c_s43_l22___exported___functions_gafc49ea6a76539430cd303849b60ae38d}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Pause@{cs43l22\+\_\+\+Pause}}
+\index{cs43l22\+\_\+\+Pause@{cs43l22\+\_\+\+Pause}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Pause()}{cs43l22\_Pause()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Pause (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr }\end{DoxyParamCaption})}
+
+
+
+Pauses playing on the audio codec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga1a210c3782b3d56db00565d4699f4c89}\label{group___c_s43_l22___exported___functions_ga1a210c3782b3d56db00565d4699f4c89}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Play@{cs43l22\+\_\+\+Play}}
+\index{cs43l22\+\_\+\+Play@{cs43l22\+\_\+\+Play}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Play()}{cs43l22\_Play()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Play (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint16\+\_\+t $\ast$}]{p\+Buffer,  }\item[{uint16\+\_\+t}]{Size }\end{DoxyParamCaption})}
+
+
+
+Start the audio Codec play feature. 
+
+\begin{DoxyNote}{Note}
+For this codec no Play options are required. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. ~\newline
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_gad4e4e8b889500f0e64c546a31d4b6dca}\label{group___c_s43_l22___exported___functions_gad4e4e8b889500f0e64c546a31d4b6dca}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Read\+ID@{cs43l22\+\_\+\+Read\+ID}}
+\index{cs43l22\+\_\+\+Read\+ID@{cs43l22\+\_\+\+Read\+ID}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Read\+I\+D()}{cs43l22\_ReadID()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Read\+ID (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr }\end{DoxyParamCaption})}
+
+
+
+Get the C\+S43\+L22 ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. ~\newline
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & C\+S43\+L22 ID \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga647488feb466972a5557a2fe2e9350e7}\label{group___c_s43_l22___exported___functions_ga647488feb466972a5557a2fe2e9350e7}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Reset@{cs43l22\+\_\+\+Reset}}
+\index{cs43l22\+\_\+\+Reset@{cs43l22\+\_\+\+Reset}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Reset()}{cs43l22\_Reset()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr }\end{DoxyParamCaption})}
+
+
+
+Resets cs43l22 registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga579c0ef6455060e9117632f8d83d606a}\label{group___c_s43_l22___exported___functions_ga579c0ef6455060e9117632f8d83d606a}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Resume@{cs43l22\+\_\+\+Resume}}
+\index{cs43l22\+\_\+\+Resume@{cs43l22\+\_\+\+Resume}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Resume()}{cs43l22\_Resume()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Resume (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr }\end{DoxyParamCaption})}
+
+
+
+Resumes playing on the audio codec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga1ea4920e35f5e5f903870a50b53bc719}\label{group___c_s43_l22___exported___functions_ga1ea4920e35f5e5f903870a50b53bc719}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Set\+Frequency@{cs43l22\+\_\+\+Set\+Frequency}}
+\index{cs43l22\+\_\+\+Set\+Frequency@{cs43l22\+\_\+\+Set\+Frequency}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Set\+Frequency()}{cs43l22\_SetFrequency()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Set\+Frequency (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint32\+\_\+t}]{Audio\+Freq }\end{DoxyParamCaption})}
+
+
+
+Sets new frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. ~\newline
+\\
+\hline
+{\em Audio\+Freq} & Audio frequency used to play the audio stream. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_gaed17c2b64d79830afa43b5a45b159286}\label{group___c_s43_l22___exported___functions_gaed17c2b64d79830afa43b5a45b159286}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Set\+Mute@{cs43l22\+\_\+\+Set\+Mute}}
+\index{cs43l22\+\_\+\+Set\+Mute@{cs43l22\+\_\+\+Set\+Mute}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Set\+Mute()}{cs43l22\_SetMute()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Set\+Mute (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint32\+\_\+t}]{Cmd }\end{DoxyParamCaption})}
+
+
+
+Enables or disables the mute feature on the audio codec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. ~\newline
+\\
+\hline
+{\em Cmd} & A\+U\+D\+I\+O\+\_\+\+M\+U\+T\+E\+\_\+\+ON to enable the mute or A\+U\+D\+I\+O\+\_\+\+M\+U\+T\+E\+\_\+\+O\+FF to disable the mute mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_gaad55b2ed28b599b34f4bfe50df745f0d}\label{group___c_s43_l22___exported___functions_gaad55b2ed28b599b34f4bfe50df745f0d}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Set\+Output\+Mode@{cs43l22\+\_\+\+Set\+Output\+Mode}}
+\index{cs43l22\+\_\+\+Set\+Output\+Mode@{cs43l22\+\_\+\+Set\+Output\+Mode}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Set\+Output\+Mode()}{cs43l22\_SetOutputMode()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Set\+Output\+Mode (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint8\+\_\+t}]{Output }\end{DoxyParamCaption})}
+
+
+
+Switch dynamically (while audio file is played) the output target (speaker or headphone). 
+
+\begin{DoxyNote}{Note}
+This function modifies a global variable of the audio codec driver\+: Output\+Dev. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. \\
+\hline
+{\em Output} & specifies the audio output target\+: O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+P\+E\+A\+K\+ER, O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+H\+E\+A\+D\+P\+H\+O\+NE, O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+B\+O\+TH or O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+A\+U\+TO \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga9cd060bb226e44065ec50c7803041114}\label{group___c_s43_l22___exported___functions_ga9cd060bb226e44065ec50c7803041114}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Set\+Volume@{cs43l22\+\_\+\+Set\+Volume}}
+\index{cs43l22\+\_\+\+Set\+Volume@{cs43l22\+\_\+\+Set\+Volume}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Set\+Volume()}{cs43l22\_SetVolume()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Set\+Volume (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint8\+\_\+t}]{Volume }\end{DoxyParamCaption})}
+
+
+
+Sets higher or lower the codec volume level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. ~\newline
+\\
+\hline
+{\em Volume} & a byte value from 0 to 255 (refer to codec registers description for more details). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___c_s43_l22___exported___functions_ga8e551ac489dbd2b701f0ac6ed54c143b}\label{group___c_s43_l22___exported___functions_ga8e551ac489dbd2b701f0ac6ed54c143b}} 
+\index{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}!cs43l22\+\_\+\+Stop@{cs43l22\+\_\+\+Stop}}
+\index{cs43l22\+\_\+\+Stop@{cs43l22\+\_\+\+Stop}!C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Exported\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{cs43l22\+\_\+\+Stop()}{cs43l22\_Stop()}}
+{\footnotesize\ttfamily uint32\+\_\+t cs43l22\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{Device\+Addr,  }\item[{uint32\+\_\+t}]{Codec\+Pdwn\+Mode }\end{DoxyParamCaption})}
+
+
+
+Stops audio Codec playing. It powers down the codec. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device\+Addr} & Device address on communication Bus. \\
+\hline
+{\em Codec\+Pdwn\+Mode} & selects the power down mode.
+\begin{DoxyItemize}
+\item C\+O\+D\+E\+C\+\_\+\+P\+D\+W\+N\+\_\+\+HW\+: Physically power down the codec. When resuming from this mode, the codec is set to default configuration (user should re-\/\+Initialize the codec in order to play again the audio stream). 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & if correct communication, else wrong communication \\
+\hline
+\end{DoxyRetVals}

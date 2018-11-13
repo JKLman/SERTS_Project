@@ -1,0 +1,205 @@
+\hypertarget{cs43l22_8h}{}\section{src/cs43l22.h File Reference}
+\label{cs43l22_8h}\index{src/cs43l22.\+h@{src/cs43l22.\+h}}
+
+
+This file contains all the functions prototypes for the \mbox{\hyperlink{cs43l22_8c}{cs43l22.\+c}} driver.  
+
+
+{\ttfamily \#include \char`\"{}audio.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+S\+P\+E\+A\+K\+ER}~1
+\item 
+\#define {\bfseries O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+H\+E\+A\+D\+P\+H\+O\+NE}~2
+\item 
+\#define {\bfseries O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+B\+O\+TH}~3
+\item 
+\#define {\bfseries O\+U\+T\+P\+U\+T\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+A\+U\+TO}~4
+\item 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+V\+O\+L\+M\+IN}~0x00
+\item 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+V\+O\+L\+M\+AX}~0x\+FF
+\item 
+\#define {\bfseries D\+E\+F\+A\+U\+L\+T\+\_\+\+V\+O\+L\+S\+T\+EP}~0x04
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+P\+A\+U\+SE}~0
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+R\+E\+S\+U\+ME}~1
+\item 
+\#define {\bfseries C\+O\+D\+E\+C\+\_\+\+P\+D\+W\+N\+\_\+\+HW}~1
+\item 
+\#define {\bfseries C\+O\+D\+E\+C\+\_\+\+P\+D\+W\+N\+\_\+\+SW}~2
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+M\+U\+T\+E\+\_\+\+ON}~1
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+M\+U\+T\+E\+\_\+\+O\+FF}~0
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+192K}~((uint32\+\_\+t)192000)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+96K}~((uint32\+\_\+t)96000)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+48K}~((uint32\+\_\+t)48000)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+44K}~((uint32\+\_\+t)44100)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+32K}~((uint32\+\_\+t)32000)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+22K}~((uint32\+\_\+t)22050)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+16K}~((uint32\+\_\+t)16000)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+11K}~((uint32\+\_\+t)11025)
+\item 
+\#define {\bfseries A\+U\+D\+I\+O\+\_\+\+F\+R\+E\+Q\+U\+E\+N\+C\+Y\+\_\+8K}~((uint32\+\_\+t)8000)
+\item 
+\#define \mbox{\hyperlink{group___c_s43_l22___exported___constants_gafa115e312c746a49650c05b865741556}{C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+ID}}~0x01
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+T\+L1}~0x02
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+O\+W\+E\+R\+\_\+\+C\+T\+L2}~0x04
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+C\+L\+O\+C\+K\+I\+N\+G\+\_\+\+C\+TL}~0x05
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+C\+T\+L1}~0x06
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+I\+N\+T\+E\+R\+F\+A\+C\+E\+\_\+\+C\+T\+L2}~0x07
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+A\+S\+S\+T\+H\+R\+\_\+\+A\+\_\+\+S\+E\+L\+E\+CT}~0x08
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+A\+S\+S\+T\+H\+R\+\_\+\+B\+\_\+\+S\+E\+L\+E\+CT}~0x09
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+A\+N\+A\+L\+O\+G\+\_\+\+Z\+C\+\_\+\+S\+R\+\_\+\+S\+E\+TT}~0x0A
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+A\+S\+S\+T\+H\+R\+\_\+\+G\+A\+N\+G\+\_\+\+C\+TL}~0x0C
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+L\+A\+Y\+B\+A\+C\+K\+\_\+\+C\+T\+L1}~0x0D
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+M\+I\+S\+C\+\_\+\+C\+TL}~0x0E
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+L\+A\+Y\+B\+A\+C\+K\+\_\+\+C\+T\+L2}~0x0F
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+A\+S\+S\+T\+H\+R\+\_\+\+A\+\_\+\+V\+OL}~0x14
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+A\+S\+S\+T\+H\+R\+\_\+\+B\+\_\+\+V\+OL}~0x15
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+C\+M\+A\+\_\+\+V\+OL}~0x1A
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+P\+C\+M\+B\+\_\+\+V\+OL}~0x1B
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+B\+E\+E\+P\+\_\+\+F\+R\+E\+Q\+\_\+\+O\+N\+\_\+\+T\+I\+ME}~0x1C
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+B\+E\+E\+P\+\_\+\+V\+O\+L\+\_\+\+O\+F\+F\+\_\+\+T\+I\+ME}~0x1D
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+B\+E\+E\+P\+\_\+\+T\+O\+N\+E\+\_\+\+C\+FG}~0x1E
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+T\+O\+N\+E\+\_\+\+C\+TL}~0x1F
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+M\+A\+S\+T\+E\+R\+\_\+\+A\+\_\+\+V\+OL}~0x20
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+M\+A\+S\+T\+E\+R\+\_\+\+B\+\_\+\+V\+OL}~0x21
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+H\+E\+A\+D\+P\+H\+O\+N\+E\+\_\+\+A\+\_\+\+V\+OL}~0x22
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+H\+E\+A\+D\+P\+H\+O\+N\+E\+\_\+\+B\+\_\+\+V\+OL}~0x23
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+A\+\_\+\+V\+OL}~0x24
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+B\+\_\+\+V\+OL}~0x25
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+C\+H\+\_\+\+M\+I\+X\+E\+R\+\_\+\+S\+W\+AP}~0x26
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+T\+L1}~0x27
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+L\+I\+M\+I\+T\+\_\+\+C\+T\+L2}~0x28
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+L\+I\+M\+I\+T\+\_\+\+A\+T\+T\+A\+C\+K\+\_\+\+R\+A\+TE}~0x29
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+O\+V\+F\+\_\+\+C\+L\+K\+\_\+\+S\+T\+A\+T\+US}~0x2E
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+B\+A\+T\+T\+\_\+\+C\+O\+M\+P\+E\+N\+S\+A\+T\+I\+ON}~0x2F
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+V\+P\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+\_\+\+L\+E\+V\+EL}~0x30
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+S\+P\+E\+A\+K\+E\+R\+\_\+\+S\+T\+A\+T\+US}~0x31
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+M\+O\+N\+I\+T\+O\+R\+\_\+\+C\+TL}~0x32
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+T\+H\+E\+R\+M\+A\+L\+\_\+\+F\+O\+L\+D\+B\+A\+CK}~0x33
+\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+R\+E\+G\+\_\+\+C\+H\+A\+R\+G\+E\+\_\+\+P\+U\+M\+P\+\_\+\+F\+R\+EQ}~0x34
+\item 
+\#define \mbox{\hyperlink{group___c_s43_l22___exported___constants_ga61c920fd1a4e4cd0fc56d37ff9e3e2e3}{C\+S43\+L22\+\_\+\+ID}}~0x\+E0
+\begin{DoxyCompactList}\small\item\em C\+S43\+L22 ID ~\newline
+ \end{DoxyCompactList}\item 
+\#define {\bfseries C\+S43\+L22\+\_\+\+I\+D\+\_\+\+M\+A\+SK}~0x\+F8
+\item 
+\#define \mbox{\hyperlink{group___c_s43_l22___exported___constants_ga8b34c1514aaed772f942050e648491a1}{C\+S43\+L22\+\_\+\+C\+H\+I\+P\+I\+D\+\_\+\+A\+D\+DR}}~0x01
+\begin{DoxyCompactList}\small\item\em Chip ID Register\+: Chip I.\+D. and Revision Register Read only register Default value\+: 0x01 \mbox{[}7\+:3\mbox{]} C\+H\+I\+P\+ID\mbox{[}4\+:0\mbox{]}\+: I.\+D. code for the C\+S43\+L22. Default value\+: 11100b \mbox{[}2\+:0\mbox{]} R\+E\+V\+ID\mbox{[}2\+:0\mbox{]}\+: C\+S43\+L22 revision level. Default value\+: 000 -\/ Rev A0 001 -\/ Rev A1 010 -\/ Rev B0 011 -\/ Rev B1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga47b373a281c7ba0ea0fac752f3d0a903}{cs43l22\+\_\+\+Init}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t Output\+Device, uint8\+\_\+t Volume, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the audio codec and the control interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_s43_l22___exported___functions_gaeba1251bafcbeacb591dfe8cb8175447}{cs43l22\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gad4e4e8b889500f0e64c546a31d4b6dca}{cs43l22\+\_\+\+Read\+ID}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Get the C\+S43\+L22 ID. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga1a210c3782b3d56db00565d4699f4c89}{cs43l22\+\_\+\+Play}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t $\ast$p\+Buffer, uint16\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Start the audio Codec play feature. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gafc49ea6a76539430cd303849b60ae38d}{cs43l22\+\_\+\+Pause}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Pauses playing on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga579c0ef6455060e9117632f8d83d606a}{cs43l22\+\_\+\+Resume}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Resumes playing on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga8e551ac489dbd2b701f0ac6ed54c143b}{cs43l22\+\_\+\+Stop}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Cmd)
+\begin{DoxyCompactList}\small\item\em Stops audio Codec playing. It powers down the codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga9cd060bb226e44065ec50c7803041114}{cs43l22\+\_\+\+Set\+Volume}} (uint16\+\_\+t Device\+Addr, uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Sets higher or lower the codec volume level. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga1ea4920e35f5e5f903870a50b53bc719}{cs43l22\+\_\+\+Set\+Frequency}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Sets new frequency. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gaed17c2b64d79830afa43b5a45b159286}{cs43l22\+\_\+\+Set\+Mute}} (uint16\+\_\+t Device\+Addr, uint32\+\_\+t Cmd)
+\begin{DoxyCompactList}\small\item\em Enables or disables the mute feature on the audio codec. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_gaad55b2ed28b599b34f4bfe50df745f0d}{cs43l22\+\_\+\+Set\+Output\+Mode}} (uint16\+\_\+t Device\+Addr, uint8\+\_\+t Output)
+\begin{DoxyCompactList}\small\item\em Switch dynamically (while audio file is played) the output target (speaker or headphone). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga647488feb466972a5557a2fe2e9350e7}{cs43l22\+\_\+\+Reset}} (uint16\+\_\+t Device\+Addr)
+\begin{DoxyCompactList}\small\item\em Resets cs43l22 registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_s43_l22___exported___functions_gace44c34a627a0fb28c61366b9ca80b78}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes Audio low level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___c_s43_l22___exported___functions_ga06ed3f7f32df17d8b5099754dd81d6b3}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De\+Initializes Audio low level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_ga269d6aa92989351e75f6d58378e3b9ba}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Write}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg, uint8\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Writes a single data. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___b_u_s___functions_gaf8740cdd8dfc7929d23d52d6fcf0901f}{A\+U\+D\+I\+O\+\_\+\+I\+O\+\_\+\+Read}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg)
+\begin{DoxyCompactList}\small\item\em Reads a single data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_u_d_i_o___drv_type_def}{A\+U\+D\+I\+O\+\_\+\+Drv\+Type\+Def}} {\bfseries cs43l22\+\_\+drv}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains all the functions prototypes for the \mbox{\hyperlink{cs43l22_8c}{cs43l22.\+c}} driver. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V2.\+0.\+2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06-\/\+October-\/2015 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2015 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 

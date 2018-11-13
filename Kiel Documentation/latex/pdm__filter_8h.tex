@@ -1,0 +1,81 @@
+\hypertarget{pdm__filter_8h}{}\section{src/pdm\+\_\+filter.h File Reference}
+\label{pdm__filter_8h}\index{src/pdm\+\_\+filter.\+h@{src/pdm\+\_\+filter.\+h}}
+
+
+Header file for P\+DM audio software decoding Library. ~\newline
+ This Library is used to decode and reconstruct the audio signal produced by ST M\+E\+MS microphone (M\+P45\+Dxxx, M\+P34\+Dxxx). For more details about this Library, please refer to document \char`\"{}\+P\+D\+M audio software decoding on S\+T\+M32 microcontrollers (\+A\+N3998)\char`\"{}.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries H\+T\+O\+NS}(A)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{pdm__filter_8h_a3003360bf4738ddc428ff90f17fefec8}\label{pdm__filter_8h_a3003360bf4738ddc428ff90f17fefec8}} 
+void {\bfseries P\+D\+M\+\_\+\+Filter\+\_\+\+Init} (\mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} $\ast$Filter)
+\item 
+\mbox{\Hypertarget{pdm__filter_8h_a10bdbe15fbc22699c3954fff4bb238b7}\label{pdm__filter_8h_a10bdbe15fbc22699c3954fff4bb238b7}} 
+int32\+\_\+t {\bfseries P\+D\+M\+\_\+\+Filter\+\_\+64\+\_\+\+M\+SB} (uint8\+\_\+t $\ast$data, uint16\+\_\+t $\ast$data\+Out, uint16\+\_\+t Mic\+Gain, \mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} $\ast$Filter)
+\item 
+\mbox{\Hypertarget{pdm__filter_8h_a384098e2481d943faed832be2c67d90b}\label{pdm__filter_8h_a384098e2481d943faed832be2c67d90b}} 
+int32\+\_\+t {\bfseries P\+D\+M\+\_\+\+Filter\+\_\+80\+\_\+\+M\+SB} (uint8\+\_\+t $\ast$data, uint16\+\_\+t $\ast$data\+Out, uint16\+\_\+t Mic\+Gain, \mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} $\ast$Filter)
+\item 
+\mbox{\Hypertarget{pdm__filter_8h_a4750383000dd52a4e1ff2292094aed67}\label{pdm__filter_8h_a4750383000dd52a4e1ff2292094aed67}} 
+int32\+\_\+t {\bfseries P\+D\+M\+\_\+\+Filter\+\_\+128\+\_\+\+M\+SB} (uint8\+\_\+t $\ast$data, uint16\+\_\+t $\ast$data\+Out, uint16\+\_\+t Mic\+Gain, \mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} $\ast$Filter)
+\item 
+\mbox{\Hypertarget{pdm__filter_8h_ab37843e09eb08a2ef1a9a0731b8a8f22}\label{pdm__filter_8h_ab37843e09eb08a2ef1a9a0731b8a8f22}} 
+int32\+\_\+t {\bfseries P\+D\+M\+\_\+\+Filter\+\_\+64\+\_\+\+L\+SB} (uint8\+\_\+t $\ast$data, uint16\+\_\+t $\ast$data\+Out, uint16\+\_\+t Mic\+Gain, \mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} $\ast$Filter)
+\item 
+\mbox{\Hypertarget{pdm__filter_8h_a8c09247adf2f48b04e033f0145331a02}\label{pdm__filter_8h_a8c09247adf2f48b04e033f0145331a02}} 
+int32\+\_\+t {\bfseries P\+D\+M\+\_\+\+Filter\+\_\+80\+\_\+\+L\+SB} (uint8\+\_\+t $\ast$data, uint16\+\_\+t $\ast$data\+Out, uint16\+\_\+t Mic\+Gain, \mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} $\ast$Filter)
+\item 
+\mbox{\Hypertarget{pdm__filter_8h_ae83b1b7be8ff44eecb2cb745731b3f72}\label{pdm__filter_8h_ae83b1b7be8ff44eecb2cb745731b3f72}} 
+int32\+\_\+t {\bfseries P\+D\+M\+\_\+\+Filter\+\_\+128\+\_\+\+L\+SB} (uint8\+\_\+t $\ast$data, uint16\+\_\+t $\ast$data\+Out, uint16\+\_\+t Mic\+Gain, \mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} $\ast$Filter)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for P\+DM audio software decoding Library. ~\newline
+ This Library is used to decode and reconstruct the audio signal produced by ST M\+E\+MS microphone (M\+P45\+Dxxx, M\+P34\+Dxxx). For more details about this Library, please refer to document \char`\"{}\+P\+D\+M audio software decoding on S\+T\+M32 microcontrollers (\+A\+N3998)\char`\"{}. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V2.\+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+31-\/\+March-\/2015 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+HT 2015 S\+T\+Microelectronics\end{center} }
+
+Licensed under M\+C\+D-\/\+ST Image SW License Agreement V2, (the \char`\"{}\+License\char`\"{}); You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: \begin{DoxyVerb}   http://www.st.com/software_license_agreement_image_v2
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pdm__filter_8h_a9cfaa9c99af812cb3c154d311fb61d7d}\label{pdm__filter_8h_a9cfaa9c99af812cb3c154d311fb61d7d}} 
+\index{pdm\+\_\+filter.\+h@{pdm\+\_\+filter.\+h}!H\+T\+O\+NS@{H\+T\+O\+NS}}
+\index{H\+T\+O\+NS@{H\+T\+O\+NS}!pdm\+\_\+filter.\+h@{pdm\+\_\+filter.\+h}}
+\subsubsection{\texorpdfstring{H\+T\+O\+NS}{HTONS}}
+{\footnotesize\ttfamily \#define H\+T\+O\+NS(\begin{DoxyParamCaption}\item[{}]{A }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+((((uint16\_t)(A) & 0xff00) >> 8) | \(\backslash\)
+                   (((uint16\_t)(A) & 0x00ff) << 8))
+\end{DoxyCode}

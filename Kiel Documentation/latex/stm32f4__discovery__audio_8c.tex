@@ -1,0 +1,113 @@
+\hypertarget{stm32f4__discovery__audio_8c}{}\section{src/stm32f4\+\_\+discovery\+\_\+audio.c File Reference}
+\label{stm32f4__discovery__audio_8c}\index{src/stm32f4\+\_\+discovery\+\_\+audio.\+c@{src/stm32f4\+\_\+discovery\+\_\+audio.\+c}}
+
+
+This file provides the Audio driver for the S\+T\+M32\+F4-\/\+Discovery board.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4\+\_\+discovery\+\_\+audio.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gae713c698a93ff492424c6a8363f53bcc}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Init}} (uint16\+\_\+t Output\+Device, uint8\+\_\+t Volume, uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Configures the audio peripherals. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaa415fdd481a01468fdfcd9d91f0f6711}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Play}} (uint16\+\_\+t $\ast$p\+Buffer, uint32\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Starts playing audio stream from a data buffer for a determined size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gacbc557827ebf62fdd9a0ceb21fd89b2b}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Change\+Buffer}} (uint16\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\begin{DoxyCompactList}\small\item\em Sends n-\/\+Bytes on the I2S interface. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga73a0f92b8adbfb2e8207067434c2bfef}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Pause}} (void)
+\begin{DoxyCompactList}\small\item\em Pauses the audio file stream. In case of using D\+MA, the D\+MA Pause feature is used. W\+A\+R\+N\+I\+NG\+: When calling \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga73a0f92b8adbfb2e8207067434c2bfef}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Pause()}} function for pause, only the \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga064f0eddd4ab25a33fd1fe83af429c9f}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Resume()}} function should be called for resume (use of \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaa415fdd481a01468fdfcd9d91f0f6711}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Play()}} function for resume could lead to unexpected behavior). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga064f0eddd4ab25a33fd1fe83af429c9f}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Resume}} (void)
+\begin{DoxyCompactList}\small\item\em Resumes the audio file streaming. ~\newline
+W\+A\+R\+N\+I\+NG\+: When calling \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga73a0f92b8adbfb2e8207067434c2bfef}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Pause()}} function for pause, only \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga064f0eddd4ab25a33fd1fe83af429c9f}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Resume()}} function should be called for resume (use of \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaa415fdd481a01468fdfcd9d91f0f6711}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Play()}} function for resume could lead to unexpected behavior). \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gad1a2df4f21ae348be27cecff63dfca1c}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Stop}} (uint32\+\_\+t Option)
+\begin{DoxyCompactList}\small\item\em Stops audio playing and Power down the Audio Codec. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga2929e2c81c7ca31f8f52622a06ab4900}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Volume}} (uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Controls the current audio volume level. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga6f0fdfb8396ba31eaebb8ff530de3dd3}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Mute}} (uint32\+\_\+t Cmd)
+\begin{DoxyCompactList}\small\item\em Enables or disables the M\+U\+TE mode by software. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gacd0d9e6eb0ff2569cf6c4b92fc359484}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Output\+Mode}} (uint8\+\_\+t Output)
+\begin{DoxyCompactList}\small\item\em Switch dynamically (while audio file is played) the output target (speaker or headphone). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaf9159656c0f4dde08c62334a25d4b106}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Set\+Frequency}} (uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Update the audio frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga1ef4021384eddbd41ca60454a2483bf3}{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Tx\+Cplt\+Callback}} (I2\+S\+\_\+\+Handle\+Type\+Def $\ast$hi2s)
+\begin{DoxyCompactList}\small\item\em Tx Transfer completed callbacks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga5bef3c73683b81e822368c9029e495bc}{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Tx\+Half\+Cplt\+Callback}} (I2\+S\+\_\+\+Handle\+Type\+Def $\ast$hi2s)
+\begin{DoxyCompactList}\small\item\em Tx Half Transfer completed callbacks. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaf7ceb1ce884743eca48891ae255db74b}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Transfer\+Complete\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA full Transfer complete event. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga7c6ef28402c2ebe4ab512e4e5147b559}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Half\+Transfer\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA Half Transfer complete event. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaefcdc4b08ef3624bde86a2ce034201bb}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Error\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA F\+I\+FO error event. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga5a40f0d40f80fd71fd16fbb4e7fb3b7d}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq, uint32\+\_\+t Bit\+Res, uint32\+\_\+t Chnl\+Nbr)
+\begin{DoxyCompactList}\small\item\em Initializes wave recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gad09c12263c075c5e26b28e4380468c9e}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Record}} (uint16\+\_\+t $\ast$pbuf, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Starts audio recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga71122b966773b01c8a5933c76f3f12fe}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em Stops audio recording. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gac1df7a4be23f378f89e25685a2266247}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Pause}} (void)
+\begin{DoxyCompactList}\small\item\em Pauses the audio file stream. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gadf7a4308129a18f4a3c22adb6f543d01}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Resume}} (void)
+\begin{DoxyCompactList}\small\item\em Resumes the audio file stream. ~\newline
+ \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gab17acd5b523e9af8ac67271b0b6123ba}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Set\+Volume}} (uint8\+\_\+t Volume)
+\begin{DoxyCompactList}\small\item\em Controls the audio in volume level. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga778fc1e32ffc40c6d779e637a80a7dac}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+P\+D\+M\+To\+P\+CM}} (uint16\+\_\+t $\ast$P\+D\+M\+Buf, uint16\+\_\+t $\ast$P\+C\+M\+Buf)
+\begin{DoxyCompactList}\small\item\em Converts audio format from P\+DM to P\+CM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga18c33b2d429b06674ec30e5b2b81862c}{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Cplt\+Callback}} (I2\+S\+\_\+\+Handle\+Type\+Def $\ast$hi2s)
+\begin{DoxyCompactList}\small\item\em Rx Transfer completed callbacks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga6c4cd3b18c42c6de0c3f4fe7068a5b12}{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Rx\+Half\+Cplt\+Callback}} (I2\+S\+\_\+\+Handle\+Type\+Def $\ast$hi2s)
+\begin{DoxyCompactList}\small\item\em Rx Half Transfer completed callbacks. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga345932dd9f27ba5e7fbf54fe6e9a18d3}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Transfer\+Complete\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em User callback when record buffer is filled. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga58049b7f6b2a1f47c114788a932ca1f7}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Half\+Transfer\+\_\+\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA Half Transfer complete event. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gaffd34f15e16f10cbe6e4f6fd35cd0ea1}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Error\+\_\+\+Callback}} (void)
+\begin{DoxyCompactList}\small\item\em Audio IN Error callback function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___o_u_t___private___functions_ga8ca0ebeda8edc26d4201fe8657be294e}{H\+A\+L\+\_\+\+I2\+S\+\_\+\+Error\+Callback}} (I2\+S\+\_\+\+Handle\+Type\+Def $\ast$hi2s)
+\begin{DoxyCompactList}\small\item\em I2S error callbacks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint32\+\_\+t {\bfseries I2\+S\+Freq} \mbox{[}8\mbox{]} = \{8000, 11025, 16000, 22050, 32000, 44100, 48000, 96000\}
+\item 
+const uint32\+\_\+t {\bfseries I2\+S\+P\+L\+LN} \mbox{[}8\mbox{]} = \{256, 429, 213, 429, 426, 271, 258, 344\}
+\item 
+const uint32\+\_\+t {\bfseries I2\+S\+P\+L\+LR} \mbox{[}8\mbox{]} = \{5, 4, 4, 4, 4, 6, 3, 1\}
+\item 
+I2\+S\+\_\+\+Handle\+Type\+Def {\bfseries h\+Audio\+Out\+I2s}
+\item 
+I2\+S\+\_\+\+Handle\+Type\+Def {\bfseries h\+Audio\+In\+I2s}
+\item 
+\mbox{\hyperlink{struct_p_d_m_filter___init_struct}{P\+D\+M\+Filter\+\_\+\+Init\+Struct}} {\bfseries Filter} \mbox{[}D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+N\+BR\mbox{]}
+\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t {\bfseries Audio\+In\+Volume} = D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+V\+O\+L\+U\+ME
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file provides the Audio driver for the S\+T\+M32\+F4-\/\+Discovery board. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V2.\+1.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+12-\/\+January-\/2016 
+\end{DoxyDate}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2016 S\+T\+Microelectronics\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 
