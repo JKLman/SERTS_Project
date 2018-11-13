@@ -13,6 +13,24 @@
 #include "arm_math.h" // header for DSP library
 #include <stdio.h>
 
+enum commands
+{
+	Play_Music,
+	Pause_Music,
+	Next_Song,
+	Previous_Song,
+	Get_Files
+};
+
+enum state
+{
+	NoState,
+	Standby,
+	FileLoad,
+	Playing,
+	Pause
+};
+
 // WAVE file header format
 typedef struct WAVHEADER {
 	unsigned char riff[4];						// RIFF string
@@ -48,6 +66,13 @@ typedef struct WAVHEADER {
 //Queue Definitions
 #define MSGQUEUE_OBJECTS 1
 
+//UART RX Definitions
+#define Play_Files_char "0"
+#define Pause_Files_char "1"
+#define FF_Files_char "2"
+#define RW_Files_char "3"
+#define Get_Files_char "4"
+
 //Global Variables
 FILE *f;
 int16_t Audio_Buffer_1[BUF_LEN];
@@ -62,34 +87,179 @@ osSemaphoreId(SEM0);
 osMessageQId mid_MsgQueue;
 osMessageQDef (MsgQueue, MSGQUEUE_OBJECTS, int32_t);
 
+osMessageQId mid_CMDQueue;
+osMessageQDef(CMDQueue, 1, uint32_t);
+
 
 //Prototypes
 void FS (void const *arg);
+void Control_Thread(void const *arg);
+void RX_Command_Thread(void const *arg);
+void Process_Event(uint16_t);
 
 //Thread Handlers
-osThreadDef (FS, osPriorityNormal, 1, 0);            // define Thread_1
+osThreadDef(FS, osPriorityNormal, 1, 0);
+osThreadDef(Control_Thread, osPriorityNormal, 1, 0);
+osThreadDef(RX_Command_Thread, osPriorityNormal, 1, 0);
 
 void Init_Thread (void) {
 
-	osThreadId id_FS; // holds the returned thread create ID
+	//Create Thread IDs
+	osThreadId FS_id;
+	osThreadId RX_Command_Thread_id;
+	osThreadId Control_Thread_id;
 	
+	//Run INIT routines
 	LED_Initialize(); // Initialize the LEDs
 	UART_Init(); // Initialize the UART
 	
-  id_FS = osThreadCreate (osThread (FS), NULL);         // create the thread
-  if (id_FS == NULL)
-	{                                        
-    // Failed to create a thread
-  };
+	//Thread Generation
 	
-	SEM0 = osSemaphoreCreate(osSemaphore(SEM0_), 0);
-	mid_MsgQueue = osMessageCreate(osMessageQ(MsgQueue), NULL);
-	if(!mid_MsgQueue)
+	//Create FS Thread
+  FS_id = osThreadCreate (osThread (FS), NULL);         // create the thread
+  if (FS_id == NULL)
+	{                                        
+   ; // Failed to create a thread
+  }
+	
+	//Create Control Thread
+	Control_Thread_id = osThreadCreate(osThread (Control_Thread), NULL);
+	if(Control_Thread_id == NULL)
 	{
-		;
+		;//Failed to create a new thread
 	}
 	
+	RX_Command_Thread_id = osThreadCreate(osThread (RX_Command_Thread), NULL);
+	if(RX_Command_Thread_id == NULL)
+	{
+		;//Failed to create a new thread
+	}
+	
+	SEM0 = osSemaphoreCreate(osSemaphore(SEM0_), 0);
+	
+	mid_MsgQueue = osMessageCreate(osMessageQ(MsgQueue), NULL);
+	if(!mid_MsgQueue)return; //Queue creation failed, handle the failure
+
+	mid_CMDQueue = osMessageCreate(osMessageQ(CMDQueue), NULL);
+	if(!mid_CMDQueue)return; //Queue creation failed, handle the failure
+	
 }
+
+void Process_Event(uint16_t event)
+{
+	//State Machine List
+	//NoState,
+	//Standby,
+	//FileLoad,
+	//Playing,
+	//Pause
+	
+	static uint16_t Current_State = Standby;
+	switch(Current_State)
+	{
+	
+		case Standby:
+			if(event == Get_Files)
+			{
+				Current_State = FileLoad;
+			}
+			else if (event == Play_Music)
+			{
+				Current_State = Playing;
+			}
+			LED_On(LED_Blue);
+			LED_Off(LED_Green);
+			LED_Off(LED_Orange);
+			LED_Off(LED_Red);
+			
+		break;
+		
+		case FileLoad:
+
+			LED_On(LED_Green);
+			LED_Off(LED_Blue);
+			LED_Off(LED_Orange);
+			LED_Off(LED_Red);
+			osDelay(3000); //Used to simulate loading files. Delete for final production
+			Current_State = Standby;
+		break;
+		
+		case Playing:
+			if(event == Pause_Music)
+			{
+				Current_State = Pause;
+			}
+			LED_On(LED_Red);
+			LED_Off(LED_Green);
+			LED_Off(LED_Orange);
+			LED_Off(LED_Blue);
+		break;
+		
+		case Pause:
+			if(event == Play_Music)
+			{
+				Current_State = Playing;
+			}
+			LED_On(LED_Orange);
+			LED_Off(LED_Green);
+			LED_Off(LED_Blue);
+			LED_Off(LED_Red);
+		break;
+			
+	}	
+	
+}
+
+void Control_Thread (void const *arg) 
+	{
+	osEvent evt;
+	Process_Event(0);
+	while(1)
+	{
+		evt = osMessageGet (mid_CMDQueue, osWaitForever);
+		if(evt.status == osEventMessage) {
+			Process_Event(evt.value.v);
+		}
+	}
+}
+
+
+void RX_Command_Thread(void const *arg) {
+	char rx_char[2] = {0, 0};
+
+  //Play_Music,
+	//Pause_Music,
+	//Next_Song,
+	//Previous_Song,
+	//Get_Files
+	
+	while (1)
+		{
+		UART_receive(rx_char, 1);
+		
+		if(!strcmp(rx_char, Play_Files_char))
+		{			
+			osMessagePut (mid_CMDQueue, Play_Music, osWaitForever);
+		}
+		else if(!strcmp(rx_char, Pause_Files_char))
+		{
+			osMessagePut (mid_CMDQueue, Pause_Music, osWaitForever);
+		}
+		else if(!strcmp(rx_char, FF_Files_char))
+		{
+			osMessagePut(mid_CMDQueue, Next_Song, osWaitForever);
+		}
+		else if(!strcmp(rx_char, RW_Files_char))
+		{
+			osMessagePut(mid_CMDQueue, Previous_Song, osWaitForever);
+		}
+		else if(!strcmp(rx_char, Get_Files_char))
+		{
+			osMessagePut(mid_CMDQueue, Get_Files, osWaitForever);
+		}
+		}
+	}
+
 
 
 
@@ -99,7 +269,7 @@ void FS (void const *argument)
 	uint8_t drivenum = 0; // Using U0: drive number
 	char *drive_name = "U0:"; // USB drive name
 	fsStatus fstatus; // file system status variable
-	WAVHEADER header;
+	//WAVHEADER header;
 	static uint8_t rtrn = 0;
 	int knownBuffer = BUFFER1ID;
 	
