@@ -73,6 +73,7 @@ typedef struct WAVHEADER {
 #define FF_Files_char "3"
 #define RW_Files_char "4"
 #define Get_Files_char "5"
+#define Set_File_char "6"
 
 //UART TX Definitions
 #define StartFileList_msg "9"
@@ -82,6 +83,7 @@ typedef struct WAVHEADER {
 FILE *f;
 int16_t Audio_Buffer_1[BUF_LEN];
 int16_t Audio_Buffer_2[BUF_LEN];
+char file_name[50];
 
 
 //Semaphores
@@ -179,43 +181,42 @@ void Process_Event(uint16_t event)
 			if(event == Get_Files)
 			{
 				Current_State = FileLoad;
+				LED_On(LED_Blue);
 				osMessagePut(mid_FSQueue, Get_Files, osWaitForever);
 			}
 			else if (event == Play_Music)
 			{
 				Current_State = Playing;
+				osMessagePut(mid_FSQueue, Play_Music, osWaitForever);
 			}
 
 		break;
 		
 		case FileLoad:
-			if(event == File_Transfer_Complete)
+			if(event == File_Transfer_Complete) //Wait untill the file transfer is complete
 			{
+				LED_Off(LED_Blue);
 				Current_State = Standby;
 			}
 		break;
 		
 		case Playing:
-
+			LED_On(LED_Green);
 			if(event == Pause_Music)
 			{
 				Current_State = Pause;
-				LED_On(LED_Orange);
-				LED_Off(LED_Green);
-				LED_Off(LED_Blue);
 				LED_Off(LED_Red);
+				osMessagePut(mid_FSQueue, Pause_Music, osWaitForever);
 			}
 		break;
 		
 		case Pause:
-
+			LED_On(LED_Red);
 			if(event == Play_Music)
 			{
 				Current_State = Playing;
-				LED_On(LED_Red);
-				LED_Off(LED_Green);
-				LED_Off(LED_Orange);
-				LED_Off(LED_Blue);
+				LED_Off(LED_Red);
+				osMessagePut(mid_FSQueue, Play_Music, osWaitForever);
 			}
 		break;
 			
@@ -274,6 +275,10 @@ void RX_Command_Thread(void const *arg)
 			{
 				osMessagePut(mid_CMDQueue, Get_Files, osWaitForever);
 			}
+			else if(!strcmp(rx_char, Set_File_char))
+			{
+				UART_receive(file_name, 50);
+			}
 		}
 	}
 
@@ -316,6 +321,8 @@ void FS (void const *argument)
 		
 		
 		//From here, have the different things the FS can do
+		
+		
 		while(1)
 		{
 			info.fileID=0;
@@ -337,10 +344,11 @@ void FS (void const *argument)
 							}
 							UART_send(EndFileList_msg, 2);
 							osMessagePut(mid_CMDQueue, File_Transfer_Complete, osWaitForever);
-					} // end Get Files
+				} // end Get Files
 				
 				else if(evt.value.v == Play_Music)
 				{
+					//f = fopen (file_name,"r");// open a file on the USB device
 					f = fopen ("Test.wav","r");// open a file on the USB device
 					if (f != NULL)
 					{
@@ -352,10 +360,12 @@ void FS (void const *argument)
 						//Load buffer 1 with information
 						fread(Audio_Buffer_1, 2, BUF_LEN, f);
 				
-				
+						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
+						
 						BSP_AUDIO_OUT_Play((uint16_t *)Audio_Buffer_1, 2*BUF_LEN);
-						while(!feof(f))
-						{
+						int flag=1;
+						while(flag)
+						{	
 							if(knownBuffer == BUFFER1ID)
 							{
 								knownBuffer = BUFFER2ID;
@@ -374,15 +384,27 @@ void FS (void const *argument)
 								osMessagePut(mid_MsgQueue, BUFFER2ID, osWaitForever);
 								osSemaphoreWait(SEM0, osWaitForever);
 							}
+							evt = osMessageGet(mid_FSQueue,0);
+							if(evt.value.v == 2){
+								flag = 0;
+							}
 						}
-						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
-						fclose (f); // close the file
+						//BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+						//fclose (f); // close the file
+						}
+						
 					} // end if file opened
-				} // end if USBH_Initialize
+				} // end if Play Music
+				
+				else if(evt.value.v == Pause_Music)
+				{
+					BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+
+				}
+				
 			}
 		}
-	}
-} // end Thread
+	} // end Thread
 
 void BSP_AUDIO_OUT_TransferComplete_CallBack(void)
 {
