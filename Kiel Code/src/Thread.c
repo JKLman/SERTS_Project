@@ -15,11 +15,11 @@
 
 enum commands
 {
-	Play_Music,
-	Pause_Music,
-	Next_Song,
-	Previous_Song,
-	Get_Files
+	Play_Music = 1,
+	Pause_Music = 2,
+	Next_Song = 3,
+	Previous_Song = 4,
+	Get_Files = 5
 };
 
 enum state
@@ -67,11 +67,11 @@ typedef struct WAVHEADER {
 #define MSGQUEUE_OBJECTS 1
 
 //UART RX Definitions
-#define Play_Files_char "0"
-#define Pause_Files_char "1"
-#define FF_Files_char "2"
-#define RW_Files_char "3"
-#define Get_Files_char "4"
+#define Play_Files_char "1"
+#define Pause_Files_char "2"
+#define FF_Files_char "3"
+#define RW_Files_char "4"
+#define Get_Files_char "5"
 
 //Global Variables
 FILE *f;
@@ -89,7 +89,6 @@ osMessageQDef (MsgQueue, MSGQUEUE_OBJECTS, int32_t);
 
 osMessageQId mid_CMDQueue;
 osMessageQDef(CMDQueue, 1, uint32_t);
-
 
 //Prototypes
 void FS (void const *arg);
@@ -129,17 +128,21 @@ void Init_Thread (void) {
 		;//Failed to create a new thread
 	}
 	
+	//Create RX Command Thread
 	RX_Command_Thread_id = osThreadCreate(osThread (RX_Command_Thread), NULL);
 	if(RX_Command_Thread_id == NULL)
 	{
 		;//Failed to create a new thread
 	}
 	
+	//Create a semaphore
 	SEM0 = osSemaphoreCreate(osSemaphore(SEM0_), 0);
-	
+
+	//Create a message queue
 	mid_MsgQueue = osMessageCreate(osMessageQ(MsgQueue), NULL);
 	if(!mid_MsgQueue)return; //Queue creation failed, handle the failure
 
+	//Create a command queueu
 	mid_CMDQueue = osMessageCreate(osMessageQ(CMDQueue), NULL);
 	if(!mid_CMDQueue)return; //Queue creation failed, handle the failure
 	
@@ -155,59 +158,71 @@ void Process_Event(uint16_t event)
 	//Pause
 	
 	static uint16_t Current_State = Standby;
+
 	switch(Current_State)
 	{
 	
 		case Standby:
-			if(event == Get_Files)
-			{
-				Current_State = FileLoad;
-			}
-			else if (event == Play_Music)
-			{
-				Current_State = Playing;
-			}
 			LED_On(LED_Blue);
 			LED_Off(LED_Green);
 			LED_Off(LED_Orange);
 			LED_Off(LED_Red);
-			
+		
+			if(event == Get_Files)
+			{
+				Current_State = FileLoad;
+				LED_On(LED_Green);
+				LED_Off(LED_Blue);
+				LED_Off(LED_Orange);
+				LED_Off(LED_Red);
+			}
+			if (event == Play_Music)
+			{
+				Current_State = Playing;
+				LED_On(LED_Red);
+				LED_Off(LED_Green);
+				LED_Off(LED_Orange);
+				LED_Off(LED_Blue);
+			}
+
 		break;
 		
 		case FileLoad:
 
-			LED_On(LED_Green);
-			LED_Off(LED_Blue);
-			LED_Off(LED_Orange);
-			LED_Off(LED_Red);
+
 			osDelay(3000); //Used to simulate loading files. Delete for final production
 			Current_State = Standby;
 		break;
 		
 		case Playing:
+
 			if(event == Pause_Music)
 			{
 				Current_State = Pause;
+				LED_On(LED_Orange);
+				LED_Off(LED_Green);
+				LED_Off(LED_Blue);
+				LED_Off(LED_Red);
 			}
-			LED_On(LED_Red);
-			LED_Off(LED_Green);
-			LED_Off(LED_Orange);
-			LED_Off(LED_Blue);
 		break;
 		
 		case Pause:
+
 			if(event == Play_Music)
 			{
 				Current_State = Playing;
+				LED_On(LED_Red);
+				LED_Off(LED_Green);
+				LED_Off(LED_Orange);
+				LED_Off(LED_Blue);
 			}
-			LED_On(LED_Orange);
-			LED_Off(LED_Green);
-			LED_Off(LED_Blue);
-			LED_Off(LED_Red);
 		break;
 			
+		default:
+			;//Do nothing
+			break;
+			
 	}	
-	
 }
 
 void Control_Thread (void const *arg) 
@@ -235,28 +250,28 @@ void RX_Command_Thread(void const *arg) {
 	
 	while (1)
 		{
-		UART_receive(rx_char, 1);
-		
-		if(!strcmp(rx_char, Play_Files_char))
-		{			
-			osMessagePut (mid_CMDQueue, Play_Music, osWaitForever);
-		}
-		else if(!strcmp(rx_char, Pause_Files_char))
-		{
-			osMessagePut (mid_CMDQueue, Pause_Music, osWaitForever);
-		}
-		else if(!strcmp(rx_char, FF_Files_char))
-		{
-			osMessagePut(mid_CMDQueue, Next_Song, osWaitForever);
-		}
-		else if(!strcmp(rx_char, RW_Files_char))
-		{
-			osMessagePut(mid_CMDQueue, Previous_Song, osWaitForever);
-		}
-		else if(!strcmp(rx_char, Get_Files_char))
-		{
-			osMessagePut(mid_CMDQueue, Get_Files, osWaitForever);
-		}
+			UART_receive(rx_char, 1);
+			
+			if(!strcmp(rx_char, Play_Files_char))
+			{			
+				osMessagePut (mid_CMDQueue, Play_Music, osWaitForever);
+			}
+			else if(!strcmp(rx_char, Pause_Files_char))
+			{
+				osMessagePut (mid_CMDQueue, Pause_Music, osWaitForever);
+			}
+			else if(!strcmp(rx_char, FF_Files_char))
+			{
+				osMessagePut(mid_CMDQueue, Next_Song, osWaitForever);
+			}
+			else if(!strcmp(rx_char, RW_Files_char))
+			{
+				osMessagePut(mid_CMDQueue, Previous_Song, osWaitForever);
+			}
+			else if(!strcmp(rx_char, Get_Files_char))
+			{
+				osMessagePut(mid_CMDQueue, Get_Files, osWaitForever);
+			}
 		}
 	}
 
