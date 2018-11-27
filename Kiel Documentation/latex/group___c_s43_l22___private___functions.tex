@@ -26,13 +26,43 @@ uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_gaed17c2b
 uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_gaad55b2ed28b599b34f4bfe50df745f0d}{cs43l22\+\_\+\+Set\+Output\+Mode}} (uint16\+\_\+t Device\+Addr, uint8\+\_\+t Output)
 \begin{DoxyCompactList}\small\item\em Switch dynamically (while audio file is played) the output target (speaker or headphone). \end{DoxyCompactList}\item 
 uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga647488feb466972a5557a2fe2e9350e7}{cs43l22\+\_\+\+Reset}} (uint16\+\_\+t Device\+Addr)
-\begin{DoxyCompactList}\small\item\em Resets cs43l22 registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Resets cs43l22 registers. \end{DoxyCompactList}\item 
+static uint8\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga99f26b128211af21a6818504a33cf25c}{C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg, uint8\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Writes/\+Read a single data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{group___c_s43_l22___private___functions_ga99f26b128211af21a6818504a33cf25c}\label{group___c_s43_l22___private___functions_ga99f26b128211af21a6818504a33cf25c}} 
+\index{C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions}!C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write@{C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write}}
+\index{C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write@{C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write}!C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions}}
+\subsubsection{\texorpdfstring{C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write()}{CODEC\_IO\_Write()}}
+{\footnotesize\ttfamily static uint8\+\_\+t C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Addr,  }\item[{uint8\+\_\+t}]{Reg,  }\item[{uint8\+\_\+t}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes/\+Read a single data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Addr} & I2C address \\
+\hline
+{\em Reg} & Reg address \\
+\hline
+{\em Value} & Data to be written \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 464 of file cs43l22.\+c.
+
 \mbox{\Hypertarget{group___c_s43_l22___private___functions_gaeba1251bafcbeacb591dfe8cb8175447}\label{group___c_s43_l22___private___functions_gaeba1251bafcbeacb591dfe8cb8175447}} 
 \index{C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions}!cs43l22\+\_\+\+De\+Init@{cs43l22\+\_\+\+De\+Init}}
 \index{cs43l22\+\_\+\+De\+Init@{cs43l22\+\_\+\+De\+Init}!C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions@{C\+S43\+L22\+\_\+\+Private\+\_\+\+Functions}}

@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('stm32f4__discovery__audio_8c.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +85,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_068f54f17156de9fa3ae6f5a2aa38775.html">Kiel Code</a></li><li class="navelem"><a class="el" href="dir_0ed9b39748f2b9cdd8eb6d163d114582.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
@@ -82,6 +102,23 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gadf90b03c2c1377a086c85c4a4d55a05e"><td class="memItemLeft" align="right" valign="top">
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___private___function___prototypes.html#gadf90b03c2c1377a086c85c4a4d55a05e">I2S3_MspInit</a> (void)</td></tr>
+<tr class="memdesc:gadf90b03c2c1377a086c85c4a4d55a05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">AUDIO OUT I2S MSP Init. <br /></td></tr>
+<tr class="separator:gadf90b03c2c1377a086c85c4a4d55a05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d2acde9244d0d7b938dc22ec689884d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions.html#ga0d2acde9244d0d7b938dc22ec689884d">I2S3_Init</a> (uint32_t AudioFreq)</td></tr>
+<tr class="memdesc:ga0d2acde9244d0d7b938dc22ec689884d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Audio Codec audio interface (I2S).  <a href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions.html#ga0d2acde9244d0d7b938dc22ec689884d">More...</a><br /></td></tr>
+<tr class="separator:ga0d2acde9244d0d7b938dc22ec689884d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5101af8923312a07f4f16d47d11786f0"><td class="memItemLeft" align="right" valign="top">
+static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___private___function___prototypes.html#ga5101af8923312a07f4f16d47d11786f0">I2S2_MspInit</a> (void)</td></tr>
+<tr class="memdesc:ga5101af8923312a07f4f16d47d11786f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">AUDIO IN I2S MSP Init. <br /></td></tr>
+<tr class="separator:ga5101af8923312a07f4f16d47d11786f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47582c41bc5f44468005bfdd6f4545df"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions.html#ga47582c41bc5f44468005bfdd6f4545df">I2S2_Init</a> (uint32_t AudioFreq)</td></tr>
+<tr class="memdesc:ga47582c41bc5f44468005bfdd6f4545df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Audio Codec audio interface (I2S)  <a href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions.html#ga47582c41bc5f44468005bfdd6f4545df">More...</a><br /></td></tr>
+<tr class="separator:ga47582c41bc5f44468005bfdd6f4545df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e91ea9d0157bbdd6251f3361ee062bb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions.html#ga4e91ea9d0157bbdd6251f3361ee062bb">PDMDecoder_Init</a> (uint32_t AudioFreq, uint32_t ChnlNbr)</td></tr>
+<tr class="memdesc:ga4e91ea9d0157bbdd6251f3361ee062bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PDM library.  <a href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions.html#ga4e91ea9d0157bbdd6251f3361ee062bb">More...</a><br /></td></tr>
+<tr class="separator:ga4e91ea9d0157bbdd6251f3361ee062bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae713c698a93ff492424c6a8363f53bcc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions.html#gae713c698a93ff492424c6a8363f53bcc">BSP_AUDIO_OUT_Init</a> (uint16_t OutputDevice, uint8_t Volume, uint32_t AudioFreq)</td></tr>
 <tr class="memdesc:gae713c698a93ff492424c6a8363f53bcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the audio peripherals.  <a href="group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions.html#gae713c698a93ff492424c6a8363f53bcc">More...</a><br /></td></tr>
 <tr class="separator:gae713c698a93ff492424c6a8363f53bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,6 +223,9 @@ const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>I2SPLLN</b>
 <tr class="memitem:ga7ba5fa9689548b002ab0ad10cec51ff0"><td class="memItemLeft" align="right" valign="top">
 const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>I2SPLLR</b> [8] = {5, 4, 4, 4, 4, 6, 3, 1}</td></tr>
 <tr class="separator:ga7ba5fa9689548b002ab0ad10cec51ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa33628039247fcef374e207192d19e09"><td class="memItemLeft" align="right" valign="top">
+static <a class="el" href="struct_a_u_d_i_o___drv_type_def.html">AUDIO_DrvTypeDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>pAudioDrv</b></td></tr>
+<tr class="separator:gaa33628039247fcef374e207192d19e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9734e3359903aa5c2318ce34dd5ac3a2"><td class="memItemLeft" align="right" valign="top">
 I2S_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>hAudioOutI2s</b></td></tr>
 <tr class="separator:ga9734e3359903aa5c2318ce34dd5ac3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,11 +255,15 @@ __IO uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>AudioInVolum
 
 <p class="definition">Definition in file <a class="el" href="stm32f4__discovery__audio_8c_source.html">stm32f4_discovery_audio.c</a>.</p>
 </div></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_068f54f17156de9fa3ae6f5a2aa38775.html">Kiel Code</a></li><li class="navelem"><a class="el" href="dir_0ed9b39748f2b9cdd8eb6d163d114582.html">src</a></li><li class="navelem"><a class="el" href="stm32f4__discovery__audio_8c.html">stm32f4_discovery_audio.c</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

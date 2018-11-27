@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['codec_5fio_5fwrite',['CODEC_IO_Write',['../group___c_s43_l22___private___functions.html#ga99f26b128211af21a6818504a33cf25c',1,'cs43l22.c']]],
   ['cs43l22_5fdeinit',['cs43l22_DeInit',['../group___c_s43_l22___private___functions.html#gaeba1251bafcbeacb591dfe8cb8175447',1,'cs43l22_DeInit(void):&#160;cs43l22.c'],['../group___c_s43_l22___exported___functions.html#gaeba1251bafcbeacb591dfe8cb8175447',1,'cs43l22_DeInit(void):&#160;cs43l22.c']]],
   ['cs43l22_5finit',['cs43l22_Init',['../group___c_s43_l22___private___functions.html#ga47b373a281c7ba0ea0fac752f3d0a903',1,'cs43l22_Init(uint16_t DeviceAddr, uint16_t OutputDevice, uint8_t Volume, uint32_t AudioFreq):&#160;cs43l22.c'],['../group___c_s43_l22___exported___functions.html#ga47b373a281c7ba0ea0fac752f3d0a903',1,'cs43l22_Init(uint16_t DeviceAddr, uint16_t OutputDevice, uint8_t Volume, uint32_t AudioFreq):&#160;cs43l22.c']]],
   ['cs43l22_5fpause',['cs43l22_Pause',['../group___c_s43_l22___private___functions.html#gafc49ea6a76539430cd303849b60ae38d',1,'cs43l22_Pause(uint16_t DeviceAddr):&#160;cs43l22.c'],['../group___c_s43_l22___exported___functions.html#gafc49ea6a76539430cd303849b60ae38d',1,'cs43l22_Pause(uint16_t DeviceAddr):&#160;cs43l22.c']]],

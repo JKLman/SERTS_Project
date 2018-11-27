@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('audio_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +85,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_068f54f17156de9fa3ae6f5a2aa38775.html">Kiel Code</a></li><li class="navelem"><a class="el" href="dir_0ed9b39748f2b9cdd8eb6d163d114582.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">audio.h</div>  </div>
@@ -72,11 +92,15 @@ $(function() {
 <div class="contents">
 <a href="audio_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/* Define to prevent recursive inclusion -------------------------------------*/</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef __AUDIO_H</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define __AUDIO_H</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/* Includes ------------------------------------------------------------------*/</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">/* Codec audio Standards */</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define CODEC_STANDARD                0x04</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define I2S_STANDARD                  I2S_STANDARD_PHILIPS</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="struct_a_u_d_i_o___drv_type_def.html">   81</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  uint32_t  (*Init)(uint16_t, uint16_t, uint8_t, uint32_t);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  void      (*DeInit)(void);</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  uint32_t  (*ReadID)(uint16_t);</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  uint32_t  (*Play)(uint16_t, uint16_t*, uint16_t);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  uint32_t  (*Pause)(uint16_t);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  uint32_t  (*Resume)(uint16_t);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  uint32_t  (*Stop)(uint16_t, uint32_t);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  uint32_t  (*SetFrequency)(uint16_t, uint32_t);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  uint32_t  (*SetVolume)(uint16_t, uint8_t);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  uint32_t  (*SetMute)(uint16_t, uint32_t);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  uint32_t  (*SetOutputMode)(uint16_t, uint8_t);</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  uint32_t  (*Reset)(uint16_t);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}<a class="code" href="struct_a_u_d_i_o___drv_type_def.html">AUDIO_DrvTypeDef</a>;</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __AUDIO_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/</span></div><div class="ttc" id="struct_a_u_d_i_o___drv_type_def_html"><div class="ttname"><a href="struct_a_u_d_i_o___drv_type_def.html">AUDIO_DrvTypeDef</a></div><div class="ttdef"><b>Definition:</b> <a href="audio_8h_source.html#l00081">audio.h:81</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.14
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_068f54f17156de9fa3ae6f5a2aa38775.html">Kiel Code</a></li><li class="navelem"><a class="el" href="dir_0ed9b39748f2b9cdd8eb6d163d114582.html">src</a></li><li class="navelem"><a class="el" href="audio_8h.html">audio.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
 </body>
 </html>

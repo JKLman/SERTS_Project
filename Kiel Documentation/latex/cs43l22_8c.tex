@@ -14,6 +14,8 @@ This file provides the C\+S43\+L22 Audio Codec driver.
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+static uint8\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga99f26b128211af21a6818504a33cf25c}{C\+O\+D\+E\+C\+\_\+\+I\+O\+\_\+\+Write}} (uint8\+\_\+t Addr, uint8\+\_\+t Reg, uint8\+\_\+t Value)
+\begin{DoxyCompactList}\small\item\em Writes/\+Read a single data. \end{DoxyCompactList}\item 
 uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga47b373a281c7ba0ea0fac752f3d0a903}{cs43l22\+\_\+\+Init}} (uint16\+\_\+t Device\+Addr, uint16\+\_\+t Output\+Device, uint8\+\_\+t Volume, uint32\+\_\+t Audio\+Freq)
 \begin{DoxyCompactList}\small\item\em Initializes the audio codec and the control interface. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group___c_s43_l22___private___functions_gaeba1251bafcbeacb591dfe8cb8175447}{cs43l22\+\_\+\+De\+Init}} (void)
@@ -42,6 +44,8 @@ uint32\+\_\+t \mbox{\hyperlink{group___c_s43_l22___private___functions_ga647488f
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{struct_a_u_d_i_o___drv_type_def}{A\+U\+D\+I\+O\+\_\+\+Drv\+Type\+Def}} {\bfseries cs43l22\+\_\+drv}
+\item 
+static uint8\+\_\+t {\bfseries Is\+\_\+cs43l22\+\_\+\+Stop} = 1
 \item 
 volatile uint8\+\_\+t {\bfseries Output\+Dev} = 0
 \end{DoxyCompactItemize}

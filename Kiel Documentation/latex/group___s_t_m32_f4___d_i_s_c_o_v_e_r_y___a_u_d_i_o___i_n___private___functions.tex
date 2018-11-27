@@ -30,7 +30,11 @@ void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n__
 \begin{DoxyCompactList}\small\item\em Manages the D\+MA Half Transfer complete event. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gaffd34f15e16f10cbe6e4f6fd35cd0ea1}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gaffd34f15e16f10cbe6e4f6fd35cd0ea1}} 
 \+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_gaffd34f15e16f10cbe6e4f6fd35cd0ea1}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+I\+N\+\_\+\+Error\+\_\+\+Callback}} (void)
-\begin{DoxyCompactList}\small\item\em Audio IN Error callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Audio IN Error callback function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga4e91ea9d0157bbdd6251f3361ee062bb}{P\+D\+M\+Decoder\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq, uint32\+\_\+t Chnl\+Nbr)
+\begin{DoxyCompactList}\small\item\em Initialize the P\+DM library. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga47582c41bc5f44468005bfdd6f4545df}{I2\+S2\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the Audio Codec audio interface (I2S) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -237,4 +241,48 @@ Rx Half Transfer completed callbacks.
 
 
 Definition at line 820 of file stm32f4\+\_\+discovery\+\_\+audio.\+c.
+
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga47582c41bc5f44468005bfdd6f4545df}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga47582c41bc5f44468005bfdd6f4545df}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!I2\+S2\+\_\+\+Init@{I2\+S2\+\_\+\+Init}}
+\index{I2\+S2\+\_\+\+Init@{I2\+S2\+\_\+\+Init}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{I2\+S2\+\_\+\+Init()}{I2S2\_Init()}}
+{\footnotesize\ttfamily static void I2\+S2\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Audio\+Freq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the Audio Codec audio interface (I2S) 
+
+\begin{DoxyNote}{Note}
+This function assumes that the I2S input clock (through P\+L\+L\+\_\+R in Devices Rev\+A/Z and through dedicated P\+L\+L\+I2\+S\+\_\+R in Devices Rev\+B/Y) is already configured and ready to be used. ~\newline
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Audio\+Freq} & Audio frequency to be configured for the I2S peripheral. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 958 of file stm32f4\+\_\+discovery\+\_\+audio.\+c.
+
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga4e91ea9d0157bbdd6251f3361ee062bb}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga4e91ea9d0157bbdd6251f3361ee062bb}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}!P\+D\+M\+Decoder\+\_\+\+Init@{P\+D\+M\+Decoder\+\_\+\+Init}}
+\index{P\+D\+M\+Decoder\+\_\+\+Init@{P\+D\+M\+Decoder\+\_\+\+Init}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O I\+N Private Functions}}
+\subsubsection{\texorpdfstring{P\+D\+M\+Decoder\+\_\+\+Init()}{PDMDecoder\_Init()}}
+{\footnotesize\ttfamily static void P\+D\+M\+Decoder\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Audio\+Freq,  }\item[{uint32\+\_\+t}]{Chnl\+Nbr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initialize the P\+DM library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Audio\+Freq} & Audio sampling frequency \\
+\hline
+{\em Chnl\+Nbr} & Number of audio channels (1\+: mono; 2\+: stereo) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 865 of file stm32f4\+\_\+discovery\+\_\+audio.\+c.
 

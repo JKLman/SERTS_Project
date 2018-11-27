@@ -36,7 +36,9 @@ void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t
 \begin{DoxyCompactList}\small\item\em Manages the D\+MA Half Transfer complete event. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaefcdc4b08ef3624bde86a2ce034201bb}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaefcdc4b08ef3624bde86a2ce034201bb}} 
 \+\_\+\+\_\+weak void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaefcdc4b08ef3624bde86a2ce034201bb}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Error\+\_\+\+Call\+Back}} (void)
-\begin{DoxyCompactList}\small\item\em Manages the D\+MA F\+I\+FO error event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Manages the D\+MA F\+I\+FO error event. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga0d2acde9244d0d7b938dc22ec689884d}{I2\+S3\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the Audio Codec audio interface (I2S). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -319,4 +321,23 @@ Tx Half Transfer completed callbacks.
 
 
 Definition at line 511 of file stm32f4\+\_\+discovery\+\_\+audio.\+c.
+
+\mbox{\Hypertarget{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga0d2acde9244d0d7b938dc22ec689884d}\label{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga0d2acde9244d0d7b938dc22ec689884d}} 
+\index{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O O\+U\+T Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O O\+U\+T Private Functions}!I2\+S3\+\_\+\+Init@{I2\+S3\+\_\+\+Init}}
+\index{I2\+S3\+\_\+\+Init@{I2\+S3\+\_\+\+Init}!S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O O\+U\+T Private Functions@{S\+T\+M32\+F4 D\+I\+S\+C\+O\+V\+E\+R\+Y A\+U\+D\+I\+O O\+U\+T Private Functions}}
+\subsubsection{\texorpdfstring{I2\+S3\+\_\+\+Init()}{I2S3\_Init()}}
+{\footnotesize\ttfamily static void I2\+S3\+\_\+\+Init (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Audio\+Freq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the Audio Codec audio interface (I2S). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Audio\+Freq} & Audio frequency to be configured for the I2S peripheral. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 619 of file stm32f4\+\_\+discovery\+\_\+audio.\+c.
 

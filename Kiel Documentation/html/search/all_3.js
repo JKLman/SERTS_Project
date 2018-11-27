@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['codec_5fio_5fwrite',['CODEC_IO_Write',['../group___c_s43_l22___private___functions.html#ga99f26b128211af21a6818504a33cf25c',1,'cs43l22.c']]],
   ['component',['Component',['../group___component.html',1,'']]],
   ['components',['Components',['../group___components.html',1,'']]],
   ['cs43l22',['CS43L22',['../group___c_s43_l22.html',1,'']]],

@@ -9,6 +9,16 @@ This file provides the Audio driver for the S\+T\+M32\+F4-\/\+Discovery board.
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___private___function___prototypes_gadf90b03c2c1377a086c85c4a4d55a05e}{I2\+S3\+\_\+\+Msp\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em A\+U\+D\+IO O\+UT I2S M\+SP Init. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_ga0d2acde9244d0d7b938dc22ec689884d}{I2\+S3\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the Audio Codec audio interface (I2S). \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___private___function___prototypes_ga5101af8923312a07f4f16d47d11786f0}{I2\+S2\+\_\+\+Msp\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em A\+U\+D\+IO IN I2S M\+SP Init. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga47582c41bc5f44468005bfdd6f4545df}{I2\+S2\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the Audio Codec audio interface (I2S) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___i_n___private___functions_ga4e91ea9d0157bbdd6251f3361ee062bb}{P\+D\+M\+Decoder\+\_\+\+Init}} (uint32\+\_\+t Audio\+Freq, uint32\+\_\+t Chnl\+Nbr)
+\begin{DoxyCompactList}\small\item\em Initialize the P\+DM library. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gae713c698a93ff492424c6a8363f53bcc}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Init}} (uint16\+\_\+t Output\+Device, uint8\+\_\+t Volume, uint32\+\_\+t Audio\+Freq)
 \begin{DoxyCompactList}\small\item\em Configures the audio peripherals. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___a_u_d_i_o___o_u_t___private___functions_gaa415fdd481a01468fdfcd9d91f0f6711}{B\+S\+P\+\_\+\+A\+U\+D\+I\+O\+\_\+\+O\+U\+T\+\_\+\+Play}} (uint16\+\_\+t $\ast$p\+Buffer, uint32\+\_\+t Size)
@@ -75,6 +85,8 @@ const uint32\+\_\+t {\bfseries I2\+S\+Freq} \mbox{[}8\mbox{]} = \{8000, 11025, 1
 const uint32\+\_\+t {\bfseries I2\+S\+P\+L\+LN} \mbox{[}8\mbox{]} = \{256, 429, 213, 429, 426, 271, 258, 344\}
 \item 
 const uint32\+\_\+t {\bfseries I2\+S\+P\+L\+LR} \mbox{[}8\mbox{]} = \{5, 4, 4, 4, 4, 6, 3, 1\}
+\item 
+static \mbox{\hyperlink{struct_a_u_d_i_o___drv_type_def}{A\+U\+D\+I\+O\+\_\+\+Drv\+Type\+Def}} $\ast$ {\bfseries p\+Audio\+Drv}
 \item 
 I2\+S\+\_\+\+Handle\+Type\+Def {\bfseries h\+Audio\+Out\+I2s}
 \item 
