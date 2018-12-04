@@ -13,6 +13,7 @@
 #include "arm_math.h" // header for DSP library
 #include <stdio.h>
 
+
 enum commands
 {
 	Play_Music = 1,
@@ -287,13 +288,15 @@ void RX_Command_Thread(void const *arg)
 			//Gets filename to play
 			else if(!strcmp(rx_char, Set_File_char))
 			{
-				char tempArray[50];
-				char *temp;
-				//TODO: Make this work
-//				while(!strcmp(rx_char, "7"))
+//				int i = 0;
+//				//Clean the buffer for the next input
+//				for(i = 0; i < 50; i++)
 //				{
-//					UART_receive(temp, 1);
-//					
+//					requested_file_name[i] = 0;
+//				}
+				//Input data into the buffer
+				UART_receivestring(requested_file_name, 50);
+				
 			}
 		}
 	}
@@ -364,6 +367,7 @@ void FS (void const *argument)
 				
 				else if(evt.value.v == Play_Music)
 				{
+					
 					f = fopen (requested_file_name,"r");// open a file on the USB device
 					//f = fopen ("Test.wav","r");// open a file on the USB device
 					if (f != NULL)
@@ -379,22 +383,19 @@ void FS (void const *argument)
 						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
 						
 						BSP_AUDIO_OUT_Play((uint16_t *)Audio_Buffer_1, 2*BUF_LEN);
-						int flag=1;
 						while(1)
 						{
-						if(flag)
-						{	
-								if(knownBuffer == BUFFER1ID)
-								{
-									knownBuffer = BUFFER2ID;
-									//Load buffer 2 with information
-									fread(Audio_Buffer_2, 2, BUF_LEN, f);
-									
-									osMessagePut(mid_MsgQueue, BUFFER1ID, osWaitForever);
-									osSemaphoreWait(SEM0, osWaitForever);
-								}
-								else //knownBuffer == BUFFER2ID
-								{
+							if(knownBuffer == BUFFER1ID)
+							{
+								knownBuffer = BUFFER2ID;
+								//Load buffer 2 with information
+								fread(Audio_Buffer_2, 2, BUF_LEN, f);
+								
+								osMessagePut(mid_MsgQueue, BUFFER1ID, osWaitForever);
+								osSemaphoreWait(SEM0, osWaitForever);
+							}
+							else //knownBuffer == BUFFER2ID
+							{
 									knownBuffer = BUFFER1ID;
 									//Load buffer 1 with information
 									fread(Audio_Buffer_1, 2, BUF_LEN, f);
@@ -402,20 +403,14 @@ void FS (void const *argument)
 									osMessagePut(mid_MsgQueue, BUFFER2ID, osWaitForever);
 									osSemaphoreWait(SEM0, osWaitForever);
 								}
-								evt = osMessageGet(mid_FSQueue,0);
-								if(evt.value.v == 2)
-								{
-									flag = 0;
-								}
-							}
+						}
 
-						}
-						//BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
-						//fclose (f); // close the file
-						}
+					}
+						BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+						fclose (f); // close the file
+				}
 						
-					} // end if file opened
-				} // end if Play Music
+			} // end if file opened
 				
 				else if(evt.value.v == Pause_Music)
 				{
