@@ -19,10 +19,11 @@ enum commands
 	Play_Music = 1,
 	Pause_Music = 2,
 	Next_Song = 3,
-	Previous_Song = 4,
+	Restart_Song = 4,
 	Get_Files = 5,
 	File_Transfer_Complete = 6,
-	Resume_Music = 7
+	Resume_Music = 7,
+	Stop_Music = 8
 };
 
 enum state
@@ -31,7 +32,9 @@ enum state
 	Standby,
 	FileLoad,
 	Playing,
-	Pause
+	Pause,
+	NextSong,
+	PreviousSong
 };
 
 // WAVE file header format
@@ -87,6 +90,8 @@ FILE *f;
 int16_t Audio_Buffer_1[BUF_LEN];
 int16_t Audio_Buffer_2[BUF_LEN];
 char requested_file_name[50];
+
+bool newFile = false;
 
 
 //Semaphores
@@ -208,8 +213,13 @@ void Process_Event(uint16_t event)
 			if(event == Pause_Music)
 			{
 				Current_State = Pause;
-				LED_Off(LED_Red);
+				LED_Off(LED_Green);
 				osMessagePut(mid_FSQueue, Pause_Music, osWaitForever);
+			}
+			else if(event == Next_Song)
+			{
+				Current_State = Standby;
+				osMessagePut(mid_FSQueue, Stop_Music, osWaitForever);
 			}
 		break;
 		
@@ -222,7 +232,6 @@ void Process_Event(uint16_t event)
 				osMessagePut(mid_FSQueue, Resume_Music, osWaitForever);
 			}
 		break;
-			
 			
 		default:
 			;//Do nothing
@@ -248,12 +257,6 @@ void Control_Thread (void const *arg)
 void RX_Command_Thread(void const *arg)
 {
 	char rx_char[2] = {0, 0};
-
-  //Play_Music,
-	//Pause_Music,
-	//Next_Song,
-	//Previous_Song,
-	//Get_Files
 		while (1)
 		{
 			UART_receive(rx_char, 1);
@@ -264,25 +267,45 @@ void RX_Command_Thread(void const *arg)
 				osMessagePut (mid_CMDQueue, Play_Music, osWaitForever);
 			}
 			
+			
 			//Gets command to pause music
 			else if(!strcmp(rx_char, Pause_Files_char))
 			{
 				osMessagePut (mid_CMDQueue, Pause_Music, osWaitForever);
 			}
 			
+			
 			//Gets command to fast foward music
 			else if(!strcmp(rx_char, FF_Files_char))
 			{
-				UART_receivestring(requested_file_name, 50);
-				osMessagePut(mid_CMDQueue, Next_Song, osWaitForever);
+			  char tempName[50];
+				UART_receivestring(tempName, 50);
+				if(strcmp(tempName, requested_file_name))
+				{
+					strncpy(requested_file_name, tempName, 50);
+					newFile = true;
+					osMessagePut(mid_CMDQueue, Next_Song, osWaitForever);
+				  osMessagePut (mid_CMDQueue, Play_Music, osWaitForever);
+				}
+				
 			}
+			
 			
 			//Gets command to rewind music
 			else if(!strcmp(rx_char, RW_Files_char))
 			{
-				UART_receivestring(requested_file_name, 50);
-				osMessagePut(mid_CMDQueue, Previous_Song, osWaitForever);
+				char tempName[50];
+				UART_receivestring(tempName, 50);
+				if(strcmp(tempName, requested_file_name))
+				{
+					strncpy(requested_file_name, tempName, 50);
+					newFile = true;
+					osMessagePut(mid_CMDQueue, NextSong, osWaitForever);
+				  osMessagePut (mid_CMDQueue, Play_Music, osWaitForever);
+				}
+				
 			}
+			
 			
 			//Gets command to post files to GUI
 			else if(!strcmp(rx_char, Get_Files_char))
@@ -290,12 +313,15 @@ void RX_Command_Thread(void const *arg)
 				osMessagePut(mid_CMDQueue, Get_Files, osWaitForever);
 			}
 			
+			
 			//Gets filename to play
 			else if(!strcmp(rx_char, Set_File_char))
 			{
-				//Input data into the buffer
 				UART_receivestring(requested_file_name, 50);
 			}
+			
+			
+			//Gets command to resume music
 			else if(!strcmp(rx_char, Resume_File_char))
 			{
 				osMessagePut(mid_CMDQueue, Resume_Music, osWaitForever);
@@ -352,10 +378,12 @@ void FS (void const *argument)
 			{
 				switch(evt.value.v)
 				{
+
+					
 					case Get_Files:
 							// file system and drive are good to go
 							UART_send(StartFileList_msg, 2);
-							while(ffind("*.wav", &info) == fsOK) //Look for .wav files to send back
+							while(ffind("*.*", &info) == fsOK) //Look for .wav files to send back
 							{
 								int nameLength = 0;
 								char * fileName;
@@ -369,8 +397,10 @@ void FS (void const *argument)
 					break;
 							
 
+							
+							
 					case Play_Music:
-					
+					knownBuffer = BUFFER1ID;
 					f = fopen (requested_file_name,"r");// open a file on the USB device
 					//f = fopen ("Test.wav","r");// open a file on the USB device
 					if (f != NULL)
@@ -388,35 +418,38 @@ void FS (void const *argument)
 						BSP_AUDIO_OUT_Play((uint16_t *)Audio_Buffer_1, 2*BUF_LEN);
 					}
 					case Resume_Music:	
-						if(evt.value.v == Resume_Music)
+						if(evt.value.v == Resume_Music )
 						{
 							BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
 							BSP_AUDIO_OUT_ChangeBuffer((uint16_t*)Audio_Buffer_1, BUF_LEN);
+							knownBuffer = BUFFER1ID;
 						}
+						
 						int end = 0;
 						while(!end)
 						{
+								BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_OFF);
 								if(knownBuffer == BUFFER1ID)
 								{
 									knownBuffer = BUFFER2ID;
 									//Load buffer 2 with information
 									if(fread(&Audio_Buffer_2, 2, BUF_LEN, f) < BUF_LEN)
 									{
-										BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
 										end = 1;
+										break;
 									}
 									osMessagePut(mid_MsgQueue, BUFFER1ID, osWaitForever);
 									osSemaphoreWait(SEM0, osWaitForever);
 								}
 								else //knownBuffer == BUFFER2ID
 								{
-										knownBuffer = BUFFER1ID;
-										//Load buffer 1 with information
-										if(fread(&Audio_Buffer_1, 2, BUF_LEN, f) < BUF_LEN)
-										{
-											BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
-											end = 1;
-										}
+									knownBuffer = BUFFER1ID;
+									//Load buffer 1 with information
+									if(fread(&Audio_Buffer_1, 2, BUF_LEN, f) < BUF_LEN)
+									{
+										end = 1;
+										break;
+									}
 										
 										osMessagePut(mid_MsgQueue, BUFFER2ID, osWaitForever);
 										osSemaphoreWait(SEM0, osWaitForever);
@@ -431,12 +464,24 @@ void FS (void const *argument)
 										BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
 										break;
 									}
+									else if (evt.value.v == Stop_Music)
+									{
+										BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+										newFile = false;
+										fclose(f);
+										break;
+									}
+
 								}
-							}						
+								if(end)
+								{
+									BSP_AUDIO_OUT_SetMute(AUDIO_MUTE_ON);
+									fclose(f);
+								}
+							}	
 						break;	
 						}
 					}
-			//fclose(f);	
 			}
 		}
 	} // end Thread
